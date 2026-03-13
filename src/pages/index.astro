@@ -1,0 +1,511 @@
+---
+import Layout from '../components/Layout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import Card from '../components/Card.astro';
+
+const portfolioData = {
+  about: {
+    intro: "I'm a passionate AI specialist and full-stack developer dedicated to building intelligent systems that solve real-world problems.",
+    bio: "Currently pursuing a Bachelor of Science in Information Technology at USTP, specializing in Web Development and IoT. My expertise spans machine learning, computer vision, and modern web technologies."
+  },
+  services: [
+    { icon: '🤖', title: 'AI Model Development', description: 'Custom ML models for classification, regression, and predictive analytics', tags: ['TensorFlow', 'PyTorch', 'Custom Models'] },
+    { icon: '👁️', title: 'Computer Vision', description: 'Object detection, image recognition, and real-time video analysis', tags: ['OpenCV', 'YOLO', 'CNN'] },
+    { icon: '💬', title: 'Chatbots & NLP', description: 'Intelligent conversational AI and natural language processing', tags: ['LLM', 'N8N', 'Ollama'] },
+    { icon: '🔗', title: 'Data Integration', description: 'ETL pipelines and seamless system orchestration', tags: ['REST API', 'GraphQL', 'Data Flow'] },
+    { icon: '📊', title: 'Data Annotation', description: 'High-quality dataset preparation and labeling', tags: ['Labeling', 'QA', 'Validation'] },
+    { icon: '🚀', title: 'MLOps & Deployment', description: 'Production-ready model deployment and scaling', tags: ['Docker', 'CI/CD', 'Monitoring'] }
+  ],
+  expertise: [
+    { title: 'Machine Learning', level: 95, skills: 'Neural Networks • Deep Learning • Model Optimization' },
+    { title: 'Computer Vision', level: 90, skills: 'CNN • Object Detection • Image Classification' },
+    { title: 'NLP & LLMs', level: 85, skills: 'Text Analysis • Language Models • Prompt Engineering' },
+    { title: 'Full-Stack Dev', level: 92, skills: 'Frontend • Backend • Databases • DevOps' }
+  ],
+  experience: [
+    {
+      title: 'AI Developer',
+      company: 'CEPALCO',
+      date: '2026 - Present',
+      description: 'Developing AI solutions for energy management using Ollama and N8N workflow automation.',
+      tags: ['Ollama', 'N8N', 'Llama3.2', 'Docker']
+    },
+    {
+      title: 'Data Annotator',
+      company: 'Remotasks',
+      date: '2022 - 2024',
+      description: 'Performed data annotation for NLP and computer vision projects.',
+      tags: ['NER', 'Sentiment Analysis', 'Data Labeling']
+    }
+  ],
+  projects: [
+    {
+      title: 'AI Dress Code Detection',
+      description: 'Computer vision system for dress code compliance detection using Roboflow and CNN on Raspberry Pi.',
+      tags: ['Roboflow', 'Python', 'Raspberry Pi', 'Computer Vision']
+    },
+    {
+      title: 'Online Catering Platform',
+      description: 'Full-stack web application for catering service management with real-time tracking.',
+      tags: ['HTML/CSS', 'Tailwind', 'MongoDB', 'Node.js', 'Docker']
+    },
+    {
+      title: 'CEPALCO AI Ticketing',
+      description: 'Smart ticketing system powered  by AI for automated ticket classification and routing.',
+      tags: ['Python', 'AI/ML', 'API', 'N8N']
+    }
+  ]
+};
+---
+
+  <!-- Hero Section with animated gradient background -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 -z-10">
+      <!-- Gradient animated background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-neon-green/5 via-dark-primary to-neon-blue/5 animate-gradientShift"></div>
+      <!-- Floating circles -->
+      <div class="absolute top-20 right-20 w-96 h-96 bg-neon-green/10 rounded-full blur-3xl animate-orbitLarge"></div>
+      <div class="absolute bottom-20 left-20 w-80 h-80 bg-neon-blue/10 rounded-full blur-3xl animate-orbitMedium" style="animation-delay: 2s;"></div>
+      <div class="absolute top-1/2 right-1/4 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl animate-orbitSmall" style="animation-delay: 4s;"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Hero Text -->
+        <div class="animate-slideInLeft">
+          <h1 class="text-6xl lg:text-7xl font-black mb-4 leading-tight">
+            <span class="inline-block animate-fadeInDown">Transforming</span>
+            <span class="inline-block animate-fadeInDown" style="animation-delay: 0.1s;">Ideas</span>
+            <br />
+            <span class="inline-block gradient-text-purple animate-fadeInDown" style="animation-delay: 0.2s;">Into Intelligence</span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 animate-slideInUp" style="animation-delay: 0.3s;">
+            AI Specialist • Machine Learning • Computer Vision • Full-Stack Developer
+          </p>
+          <div class="flex gap-4 animate-slideInUp" style="animation-delay: 0.4s;">
+            <a href="#projects" class="btn-neon hover:shadow-neon hover:scale-105 transition-all">Explore Work</a>
+            <a href="#contact" class="btn-neon-outline hover:border-neon-green/80 transition-all">Get In Touch</a>
+          </div>
+        </div>
+
+        <!-- Floating Cards -->
+        <div class="relative h-96 hidden lg:block">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-dark-secondary/60 backdrop-blur-lg border border-neon-green/30 rounded-2xl flex items-center justify-center text-5xl animate-orbitSmall">
+            🤖
+          </div>
+          <div class="absolute top-32 right-40 w-32 h-32 bg-dark-secondary/60 backdrop-blur-lg border border-neon-blue/30 rounded-2xl flex items-center justify-center text-5xl animate-orbitMedium" style="animation-delay: 1s;">
+            💻
+          </div>
+          <div class="absolute top-64 right-20 w-32 h-32 bg-dark-secondary/60 backdrop-blur-lg border border-neon-purple/30 rounded-2xl flex items-center justify-center text-5xl animate-orbitLarge" style="animation-delay: 2s;">
+            👁️
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section with wave animation background -->
+  <section id="about" class="relative py-24 overflow-hidden">
+    <!-- Animated tech wave background -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 opacity-30" style="background: linear-gradient(45deg, rgba(0, 255, 136, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 255, 136, 0.1) 75%, rgba(0, 255, 136, 0.1)), linear-gradient(45deg, rgba(0, 255, 136, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 255, 136, 0.1) 75%, rgba(0, 255, 136, 0.1)); background-size: 100px 100px; background-position: 0 0, 50px 50px; animation: gridFlow 30s linear infinite;"></div>
+      <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-neon-green/20 to-transparent blur-3xl rounded-full animate-float"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-neon-blue/20 to-transparent blur-3xl rounded-full animate-float" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <SectionTitle title="About Me" subtitle="Who I Am and What I Do" />
+      
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="animate-slideInLeft">
+          <h3 class="text-3xl font-bold text-neon-green mb-4">Passionate About Innovation</h3>
+          <p class="text-gray-300 leading-relaxed mb-4">{portfolioData.about.intro}</p>
+          <p class="text-gray-400 leading-relaxed">{portfolioData.about.bio}</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 animate-slideInUp">
+          {[
+            { icon: '⚙️', title: 'Technologies', desc: 'Python, JavaScript, React, Docker, TensorFlow' },
+            { icon: '🎯', title: 'Specialization', desc: 'Machine Learning, Computer Vision, AI Development' },
+            { icon: '🚀', title: 'Focus', desc: 'Building scalable, intelligent solutions' }
+          ].map((skill) => (
+            <div class="p-5 bg-dark-secondary/40 backdrop-blur-lg border border-neon-green/20 rounded-xl hover:border-neon-green/50 hover:bg-dark-secondary/60 transition-all group">
+              <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">{skill.icon}</div>
+              <h4 class="text-lg font-semibold text-neon-green">{skill.title}</h4>
+              <p class="text-sm text-gray-400">{skill.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section with particle background -->
+  <section id="services" class="relative py-24 overflow-hidden">
+    <!-- Particle/dot pattern background -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(0, 255, 136, 0.1) 1px, transparent 1px); background-size: 50px 50px; opacity: 0.5;"></div>
+      <div class="absolute top-1/2 left-0 w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl animate-orbitSmall" style="animation-delay: 0.5s;"></div>
+      <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-neon-green/10 rounded-full blur-3xl animate-orbitMedium" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <SectionTitle title="Services" subtitle="What I Offer" />
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {portfolioData.services.map((service, idx) => (
+          <div style={`animation-delay: ${idx * 0.1}s;`} class="animate-slideUp">
+            <Card
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+              tags={service.tags}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section with flowing lines background -->
+  <section id="expertise" class="relative py-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <!-- Flowing tech lines -->
+      <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(90deg, rgba(0, 255, 136, 0.2) 1px, transparent 1px), linear-gradient(0deg, rgba(0, 150, 255, 0.2) 1px, transparent 1px); background-size: 100px 100px; animation: gridFlow 40s linear infinite;"></div>
+      <div class="absolute top-20 left-1/4 w-80 h-80 bg-neon-purple/15 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-1/3 w-96 h-96 bg-neon-green/15 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <SectionTitle title="Expertise" subtitle="Skills & Proficiencies" />
+      <div class="grid md:grid-cols-2 gap-8">
+        {portfolioData.expertise.map((exp, idx) => (
+          <div class="card-glass animate-slideUp" style={`animation-delay: ${idx * 0.15}s;`}>
+            <h3 class="text-xl font-bold text-neon-green mb-4">{exp.title}</h3>
+            <div class="w-full bg-neon-green/10 rounded-full h-2 mb-3 overflow-hidden">
+              <div class="bg-gradient-to-r from-neon-green via-neon-blue to-neon-purple h-full transition-all duration-600" style={`width: ${exp.level}%`}></div>
+            </div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-sm font-semibold text-neon-green">{exp.level}%</span>
+            </div>
+            <p class="text-xs text-gray-400 leading-relaxed">{exp.skills}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section with gradient flow background -->
+  <section id="experience" class="relative py-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-neon-blue/10 via-dark-primary to-neon-green/10 animate-gradientShift"></div>
+      <div class="absolute left-0 top-1/3 w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl opacity-50"></div>
+      <div class="absolute right-0 bottom-0 w-96 h-96 bg-neon-green/20 rounded-full blur-3xl opacity-50 animate-float" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <SectionTitle title="Experience" subtitle="My Professional Journey" />
+      <div class="space-y-8">
+        {portfolioData.experience.map((job, idx) => (
+          <div class="card-glass animate-slideUp" style={`animation-delay: ${idx * 0.2}s;`}>
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-neon-green">{job.title}</h3>
+                <p class="text-sm text-gray-400">{job.company}</p>
+              </div>
+              <span class="text-sm font-semibold text-neon-blue">{job.date}</span>
+            </div>
+            <p class="text-gray-300 mb-4 leading-relaxed">{job.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {job.tags.map((tag) => (
+                <span class="px-2 py-1 text-xs bg-neon-green/15 text-neon-green border border-neon-green/30 rounded-full">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section with scattered particles background -->
+  <section id="projects" class="relative py-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <!-- Scattered particles -->
+      {[...Array(25)].map((_, i) => (
+        <div
+          class="absolute rounded-full opacity-30 animate-pulse"
+          style={{
+            width: Math.random() * 100 + 50 + 'px',
+            height: Math.random() * 100 + 50 + 'px',
+            background: `radial-gradient(circle, ${['rgba(0, 255, 136, 0.2)', 'rgba(0, 150, 255, 0.2)', 'rgba(138, 43, 226, 0.2)'][Math.floor(Math.random() * 3)]}, transparent)`,
+            left: Math.random() * 100 + '%',
+            top: Math.random() * 100 + '%',
+            animationDelay: Math.random() * 2 + 's'
+          }}
+        ></div>
+      ))}
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <SectionTitle title="Projects" subtitle="Featured Work" />
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {portfolioData.projects.map((project, idx) => (
+          <div style={`animation-delay: ${idx * 0.1}s;`} class="animate-slideUp">
+            <Card
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+              href="#"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section with minimal animated background -->
+  <section id="education" class="relative py-24">
+    <div class="absolute inset-0 -z-10 opacity-20">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, rgba(0, 255, 136, 0.1) 0px, rgba(0, 255, 136, 0.1) 1px, transparent 1px, transparent 100px); animation: gridFlow 60s linear infinite;"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <SectionTitle title="Education" subtitle="Learning & Development" />
+      <div class="card-glass max-w-2xl mx-auto animate-slideUp">
+        <h3 class="text-2xl font-bold text-neon-green mb-2">Bachelor of Science in Information Technology</h3>
+        <p class="text-gray-300 mb-2">University of Science and Technology of Southern Philippines (USTP)</p>
+        <p class="text-sm text-neon-blue font-semibold mb-4">Expected: 2026</p>
+        <p class="text-gray-400">Specialization in Web Development and Internet of Things</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section with radial gradient background -->
+  <section id="certifications" class="relative py-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-neon-green/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-radial from-neon-blue/20 to-transparent rounded-full blur-3xl animate-float" style="animation-delay: 1.5s;"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <SectionTitle title="Certifications" subtitle="Professional Credentials" />
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          { icon: '🏆', title: 'CCNA Enterprise Networking', org: 'Cisco', date: 'May 2025' },
+          { icon: '🔒', title: 'CyberOps Associate', org: 'Cisco', date: 'Dec 26, 2025' },
+          { icon: '🛡️', title: 'Intro to Cybersecurity', org: 'Cisco', date: 'Sept 14, 2025' }
+        ].map((cert, idx) => (
+          <div class="card-glass text-center animate-slideUp" style={`animation-delay: ${idx * 0.15}s;`}>
+            <div class="text-5xl mb-3">{cert.icon}</div>
+            <h3 class="text-lg font-semibold text-neon-green mb-1">{cert.title}</h3>
+            <p class="text-sm text-gray-400 mb-2">{cert.org}</p>
+            <time class="text-xs text-neon-blue font-semibold">{cert.date}</time>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section with electric effect background -->
+  <section id="contact" class="relative py-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <!-- Electric lines effect -->
+      <div class="absolute inset-0 opacity-20" style="background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 136, 0.1) 50%, transparent 100%), linear-gradient(0deg, transparent 0%, rgba(0, 150, 255, 0.1) 50%, transparent 100%); background-size: 200% 200%; animation: gradientShift 8s ease infinite;"></div>
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-neon-green/10 rounded-full blur-3xl animate-orbitSmall" style="animation-delay: 0.5s;"></div>
+      <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-neon-blue/10 rounded-full blur-3xl animate-orbitMedium" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <SectionTitle title="Get In Touch" subtitle="Let's Connect" />
+      <div class="grid lg:grid-cols-2 gap-6 mb-8  ">
+        {[
+          { icon: '📧', label: 'Email', value: 'gaid.tristan123@gmail.com', href: 'mailto:gaid.tristan123@gmail.com' },
+          { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/tristangaid8080/', href: 'https://linkedin.com/in/tristangaid8080/' },
+          { icon: '💻', label: 'GitHub', value: 'github.com/tanex08', href: 'https://github.com/tanex08' }
+        ].map((link) => (
+          <a href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} class="card-glass block animate-slideUp hover:scale-105 transition-transform text-center">
+            <div class="text-4xl mb-3">{link.icon}</div>
+            <h4 class="text-lg font-semibold text-neon-green mb-1">{link.label}</h4>
+        <style>
+  .gradient-text-purple {
+    background: linear-gradient(135deg, #00ff88 0%, #0096ff 50%, #8a2be2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @keyframes gridFlow {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+  .contact-card .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .contact-card h4 {
+    color: #00ff88;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    background: rgba(20, 30, 48, 0.6);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--color-text);
+    font-family: inherit;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: rgba(0, 255, 136, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+  }
+
+  .contact-form textarea {
+    resize: vertical;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--color-text-light);
+    border-top: 1px solid rgba(0, 255, 136, 0.1);
+  }
+
+  /* Animations */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .skills-showcase {
+      grid-template-columns: 1fr;
+    }
+
+    .experience-timeline::before {
+      left: 20px;
+    }
+
+    .timeline-item {
+      grid-template-columns: 1fr;
+      margin-left: 50px;
+    }
+
+    .timeline-item:nth-child(even) {
+      direction: ltr;
+    }
+
+    .timeline-content {
+      margin-left: 0;
+    }
+
+    .contact-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  // Smooth scroll behavior is handled by CSS
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && document.querySelector(href)) {
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>

@@ -1,0 +1,105 @@
+---
+---
+
+<div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-dark-base to-dark-primary flex items-center justify-center z-9999 pointer-events-auto transition-all duration-500">
+  <div class="text-center relative">
+    <!-- Glow pulse background -->
+    <div class="absolute w-52 h-52 bg-gradient-radial from-neon-green/20 to-transparent rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+
+    <!-- Triple ring loader -->
+    <div class="relative w-32 h-32 mx-auto mb-6">
+      <!-- Ring 1 - Green -->
+      <div class="absolute inset-0 border-4 border-transparent border-t-neon-green rounded-full animate-spin"></div>
+      <!-- Ring 2 - Blue (smaller, reverse) -->
+      <div class="absolute inset-3 border-4 border-transparent border-t-neon-blue rounded-full animate-spin" style="animation-direction: reverse; animation-duration: 1.5s;"></div>
+      <!-- Ring 3 - Purple (smallest) -->
+      <div class="absolute inset-6 border-4 border-transparent border-t-neon-purple rounded-full animate-spin" style="animation-duration: 1s;"></div>
+    </div>
+
+    <!-- Loading text -->
+    <h2 class="text-2xl font-bold text-neon-green mb-1 tracking-wide">Loading Portfolio</h2>
+    <p class="text-gray-400 mb-6 text-sm">Initializing AI Systems...</p>
+
+    <!-- Progress bar -->
+    <div class="w-52 h-1 bg-neon-green/10 rounded-full mx-auto mb-3 overflow-hidden">
+      <div id="progress" class="h-full bg-gradient-to-r from-neon-green via-neon-blue to-neon-purple w-0 transition-all duration-300 shadow-neon"></div>
+    </div>
+
+    <!-- Progress percentage -->
+    <p id="percent" class="text-neon-green font-semibold text-sm">0%</p>
+  </div>
+</div>
+
+<style>
+  #loadingScreen {
+    z-index: 9999;
+  }
+
+  #loadingScreen.hidden {
+    @apply opacity-0 invisible pointer-events-none;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      @apply scale-100;
+    }
+    50% {
+      @apply scale-110;
+    }
+  }
+</style>
+
+<script>
+  function initLoadingScreen() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    const progressFill = document.getElementById('progress');
+    const percentText = document.getElementById('percent');
+    let progress = 0;
+    let isComplete = false;
+
+    const interval = setInterval(() => {
+      if (progress < 30) progress += Math.random() * 10;
+      else if (progress < 60) progress += Math.random() * 5;
+      else if (progress < 85) progress += Math.random() * 2;
+      else progress += Math.random() * 0.5;
+
+      if (progress > 95) progress = 95;
+      progressFill.style.width = progress + '%';
+      percentText.textContent = Math.floor(progress) + '%';
+    }, 200);
+
+    window.addEventListener('load', () => {
+      if (!isComplete) {
+        clearInterval(interval);
+        progressFill.style.width = '100%';
+        percentText.textContent = '100%';
+        isComplete = true;
+        setTimeout(() => {
+          loadingScreen?.classList.add('hidden');
+        }, 600);
+      }
+    });
+
+    setTimeout(() => {
+      if (!isComplete) {
+        clearInterval(interval);
+        progressFill.style.width = '100%';
+        percentText.textContent = '100%';
+        isComplete = true;
+        loadingScreen?.classList.add('hidden');
+      }
+    }, 6000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLoadingScreen);
+  } else {
+    initLoadingScreen();
+  }
+</script>
