@@ -1,0 +1,78 @@
+---
+import '../styles/globals.css';
+import Sidebar from './Sidebar.astro';
+import LoadingScreen from './LoadingScreen.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tristan Jay - AI Specialist Portfolio" />
+    <title>{title}</title>
+  </head>
+  <body class="relative bg-gradient-to-b from-dark-primary via-dark-base to-dark-primary text-gray-200 overflow-x-hidden">
+    <!-- Animated background elements -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      <!-- Floating particles -->
+      <div
+        class="absolute top-20 right-10 w-72 h-72 bg-neon-green bg-opacity-10 rounded-full blur-3xl animate-float"
+        style="animation-delay: 0s"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/4 w-96 h-96 bg-neon-blue bg-opacity-10 rounded-full blur-3xl animate-float"
+        style="animation-delay: 0.5s"
+      ></div>
+      <div
+        class="absolute bottom-20 right-1/4 w-80 h-80 bg-neon-purple bg-opacity-10 rounded-full blur-3xl animate-float"
+        style="animation-delay: 1s"
+      ></div>
+
+      <!-- Animated grid -->
+      <div
+        class="absolute inset-0 opacity-20"
+        style="background-image: linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px); background-size: 50px 50px; animation: gridFlow 30s linear infinite"
+      ></div>
+    </div>
+
+    <!-- Loading screen -->
+    <LoadingScreen />
+
+    <!-- Sidebar navigation -->
+    <Sidebar />
+
+    <!-- Main content -->
+    <main class="relative z-10 ml-0 lg:ml-20">
+      <slot />
+    </main>
+
+    <style is:global>
+      :root {
+        --color-primary: #00ff88;
+        --color-secondary: #0096ff;
+        --color-accent: #8a2be2;
+        --color-dark: #0a0e1a;
+        --color-darker: #050609;
+        --color-text: #e0e0e0;
+        --color-text-light: #b0b0b0;
+      }
+
+      @keyframes gridFlow {
+        0% { background-position: 0 0; }
+        100% { background-position: 100px 100px; }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+    </style>
+  </body>
+</html>

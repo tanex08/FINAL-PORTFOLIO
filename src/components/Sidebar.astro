@@ -1,0 +1,147 @@
+---
+---
+
+<aside id="sidebar" class="fixed left-0 top-0 w-20 h-screen bg-gradient-to-b from-dark-primary/95 to-dark-secondary/80 border-r border-neon-green/10 flex flex-col items-center p-4 z-100 backdrop-blur-lg transition-all duration-300 lg:w-20 max-lg:w-0 max-lg:overflow-hidden">
+  <div class="flex flex-col items-center h-full justify-between">
+    <!-- Logo Section -->
+    <div class="text-center logo-stack">
+      <span class="logo-ring" aria-hidden="true"></span>
+      <div class="w-12 h-12 bg-gradient-to-br from-neon-green to-neon-blue rounded-xl flex items-center justify-center text-lg font-bold text-dark-primary mb-1 logo-core">
+        T
+      </div>
+      <h3 class="text-xs tracking-widest text-neon-green font-semibold">TRISTAN</h3>
+    </div>
+
+    <!-- Navigation Items -->
+    <nav class="flex flex-col gap-4 flex-1 justify-center">
+      <a href="#home" class="nav-item group relative" title="Home" data-tooltip="Home">🏠</a>
+      <a href="#about" class="nav-item group relative" title="About" data-tooltip="About">👤</a>
+      <a href="#services" class="nav-item group relative" title="Services" data-tooltip="Services">⚙️</a>
+      <a href="#expertise" class="nav-item group relative" title="Expertise" data-tooltip="Expertise">🧠</a>
+      <a href="#experience" class="nav-item group relative" title="Experience" data-tooltip="Experience">💼</a>
+      <a href="#projects" class="nav-item group relative" title="Projects" data-tooltip="Projects">🚀</a>
+      <a href="#education" class="nav-item group relative" title="Education" data-tooltip="Education">🎓</a>
+      <a href="#certifications" class="nav-item group relative" title="Certifications" data-tooltip="Certifications">🏆</a>
+      <a href="#game" class="nav-item group relative" title="Game" data-tooltip="Game">🎮</a>
+      <a href="#contact" class="nav-item group relative" title="Contact" data-tooltip="Contact">✉️</a>
+    </nav>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col gap-3">
+      <button class="action-btn group" title="Download CV">⬇️</button>
+      <button class="action-btn group" title="Contact">📧</button>
+    </div>
+  </div>
+</aside>
+
+<!-- Mobile Menu Button -->
+<button id="menu-btn" class="hidden max-lg:fixed max-lg:flex max-lg:top-4 max-lg:left-4 max-lg:z-101 max-lg:items-center max-lg:justify-center max-lg:w-12 max-lg:h-12 max-lg:bg-neon-green/10 max-lg:border max-lg:border-neon-green/30 max-lg:rounded-lg max-lg:text-neon-green max-lg:text-2xl max-lg:cursor-pointer max-lg:transition-all max-lg:duration-300 max-lg:hover:bg-neon-green/20 max-lg:hover:border-neon-green/60">
+  ☰
+</button>
+
+<style>
+  .nav-item {
+    @apply flex items-center justify-center w-12 h-12 rounded-lg bg-neon-green/5 border border-neon-green/10 text-lg cursor-pointer transition-all duration-300 no-underline text-inherit relative;
+  }
+
+  .nav-item::after {
+    @apply absolute left-16 bg-neon-green/90 text-dark-primary px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 transform pointer-events-none transition-all duration-300 -translate-x-2 font-semibold;
+    content: attr(data-tooltip);
+  }
+
+  .nav-item:hover {
+    @apply bg-neon-green/20 border-neon-green/40 scale-110;
+  }
+
+  .nav-item:hover::after {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .action-btn {
+    @apply w-12 h-12 rounded-lg bg-neon-purple/15 border border-neon-purple/30 text-neon-purple text-xl cursor-pointer transition-all duration-300 hover:bg-neon-purple/30 hover:border-neon-purple/60 hover:scale-110 hover:shadow-lg;
+  }
+
+  .action-btn:hover {
+    box-shadow: 0 0 20px rgba(139, 43, 226, 0.3);
+  }
+
+  .logo-stack {
+    position: relative;
+    padding-top: 6px;
+  }
+
+  .logo-core {
+    animation: logoGlow 2.6s ease-in-out infinite;
+  }
+
+  .logo-ring {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    width: 56px;
+    height: 56px;
+    transform: translateX(-50%);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 255, 136, 0.35);
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.3);
+    animation: logoOrbit 4.8s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes logoOrbit {
+    0% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+
+  @keyframes logoGlow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    #sidebar {
+      width: 0;
+      overflow: hidden;
+    }
+
+    #sidebar.active {
+      width: 80px;
+    }
+  }
+</style>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const sidebar = document.querySelector('#sidebar');
+  const navItems = document.querySelectorAll('.nav-item');
+
+  menuBtn?.addEventListener('click', () => {
+    sidebar?.classList.toggle('active');
+  });
+
+  navItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      sidebar?.classList.remove('active');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!sidebar?.contains(e.target) && e.target !== menuBtn) {
+      sidebar?.classList.remove('active');
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+      sidebar?.classList.remove('active');
+    }
+  });
+</script>

@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<div class="text-center mb-16 animate-fadeInDown">
+  <h2 class="text-5xl font-bold uppercase tracking-widest mb-2 gradient-text-purple">
+    {title}
+  </h2>
+  {subtitle && <p class="text-lg text-gray-400 mb-4">{subtitle}</p>}
+  <div class="h-1 w-32 mx-auto bg-gradient-to-r from-neon-green via-neon-blue to-neon-purple rounded shadow-neon"></div>
+</div>
+
+<style>
+  .gradient-text-purple {
+    background: linear-gradient(135deg, #00ff88 0%, #0096ff 50%, #8a2be2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

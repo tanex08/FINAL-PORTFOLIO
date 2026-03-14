@@ -1,0 +1,70 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+  tags?: string[];
+  href?: string;
+}
+
+const { title, description, icon, tags, href } = Astro.props;
+---
+
+<div class="group card-glass relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-neon-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+  <div class="relative z-10">
+    {icon && (
+      <div class="text-4xl mb-4 inline-block animate-float">
+        {icon}
+      </div>
+    )}
+    <h3 class="text-xl font-bold text-neon-green mb-2">
+      {title}
+    </h3>
+    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
+      {description}
+    </p>
+    {tags && tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-4">
+        {tags.map((tag) => (
+          <span class="px-3 py-1 text-xs font-medium rounded-full bg-neon-green/15 text-neon-green border border-neon-green/30 hover:border-neon-green/60 transition-colors">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+    {href && (
+      <a href={href} class="inline-block text-neon-blue font-semibold hover:text-neon-green transition-colors relative group/link">
+        View More →
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-blue to-neon-green group-hover/link:w-full transition-all duration-300"></span>
+      </a>
+    )}
+  </div>
+</div>
+
+<style>
+  .card-glass {
+    @apply bg-dark-secondary/60 backdrop-blur-lg border border-neon-green/20 rounded-2xl p-6 transition-all duration-300 hover:border-neon-green/50 hover:-translate-y-2;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>

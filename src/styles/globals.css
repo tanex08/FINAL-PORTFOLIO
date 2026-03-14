@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  * {
+    @apply border-solid;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-gradient-to-b from-dark-primary via-dark-base to-dark-primary;
+    @apply text-gray-200;
+  }
+
+  /* Animated gradient backgrounds */
+  .animated-gradient {
+    background: linear-gradient(
+      -45deg,
+      #ee7752,
+      #e73c7e,
+      #23a6d5,
+      #23d5ab
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  .animated-grid {
+    background-image: 
+      linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridFlow 20s linear infinite;
+  }
+
+  .tech-lines {
+    background-image: 
+      linear-gradient(90deg, rgba(0, 255, 136, 0.03) 0%, transparent 50%, rgba(0, 255, 136, 0.03) 100%),
+      linear-gradient(0deg, rgba(0, 150, 255, 0.03) 0%, transparent 50%, rgba(0, 150, 255, 0.03) 100%);
+    background-size: 100% 100%, 100% 100%;
+  }
+
+  .glassmorphism {
+    @apply bg-opacity-60 backdrop-blur-lg;
+    background-color: rgba(20, 30, 48, 0.6);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+  }
+
+  /* Floating particles effect */
+  .particles {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .particle-1 {
+    animation-delay: 0s;
+  }
+
+  .particle-2 {
+    animation-delay: 0.5s;
+  }
+
+  .particle-3 {
+    animation-delay: 1s;
+  }
+
+  /* Neon glow text */
+  .text-neon-glow {
+    @apply text-neon-green font-bold;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.8),
+                 0 0 20px rgba(0, 255, 136, 0.5);
+  }
+
+  .text-neon-blue-glow {
+    @apply text-neon-blue font-bold;
+    text-shadow: 0 0 10px rgba(0, 150, 255, 0.8),
+                 0 0 20px rgba(0, 150, 255, 0.5);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #00ff88 0%, #0096ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-purple {
+    background: linear-gradient(135deg, #00ff88 0%, #0096ff 50%, #8a2be2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer components {
+  .btn-neon {
+    @apply px-8 py-3 rounded-lg font-semibold transition-all duration-300;
+    @apply bg-gradient-to-r from-neon-green to-neon-blue text-dark-primary;
+    @apply hover:shadow-neon hover:scale-105;
+  }
+
+  .btn-neon-outline {
+    @apply px-8 py-3 rounded-lg font-semibold;
+    @apply bg-neon-green bg-opacity-10 text-neon-green border-2 border-neon-green;
+    @apply hover:bg-opacity-20 hover:border-neon-blue transition-all duration-300;
+  }
+
+  .card-glass {
+    @apply glassmorphism rounded-2xl p-6 transition-all duration-300;
+    @apply hover:border-neon-green hover:border-opacity-50 hover:-translate-y-2;
+  }
+
+  .section-container {
+    @apply relative py-20 px-6 overflow-hidden;
+  }
+}
+
+/* Animations for smooth transitions */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shipInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
