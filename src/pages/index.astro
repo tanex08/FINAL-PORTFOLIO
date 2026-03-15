@@ -59,8 +59,10 @@ const portfolioData = {
 ---
 
 <Layout title="Tristan Jay - AI Specialist Portfolio">
+  <canvas id="constellationCanvas" class="constellation-canvas" aria-hidden="true"></canvas>
+  <div id="constellationCursor" class="constellation-cursor" aria-hidden="true"></div>
   <!-- Hero Section with animated gradient background -->
-  <section id="home" class="section-block section-accent reveal relative min-h-screen flex items-center justify-center overflow-hidden py-20" data-accent="rgba(0, 255, 136, 0.25)" data-animate="fade">
+  <section id="home" class="section-block section-accent reveal relative min-h-screen overflow-hidden pt-24 pb-16" data-accent="rgba(0, 255, 136, 0.25)" data-animate="fade" data-mission="Home" data-xp="10">
     <!-- Animated background elements -->
     <div class="absolute inset-0 -z-10">
       <!-- Gradient animated background -->
@@ -71,43 +73,42 @@ const portfolioData = {
       <div class="absolute top-1/2 right-1/4 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl animate-orbitSmall" style="animation-delay: 4s;"></div>
     </div>
 
+    <div class="hero-top">
+      <span class="hero-email">gaid.tristan123@gmail.com</span>
+      <nav class="hero-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
     <div class="max-w-6xl mx-auto px-6 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <!-- Hero Text -->
-        <div class="animate-slideInLeft">
-          <h1 class="text-6xl lg:text-7xl font-black mb-4 leading-tight">
-            <span class="inline-block animate-fadeInDown">Transforming</span>
-            <span class="inline-block animate-fadeInDown" style="animation-delay: 0.1s;">Ideas</span>
-            <br />
-            <span class="inline-block gradient-text-purple animate-fadeInDown" style="animation-delay: 0.2s;">Into Intelligence</span>
-          </h1>
-          <p class="text-xl text-gray-300 mb-8 animate-slideInUp" style="animation-delay: 0.3s;">
-            AI Specialist • Machine Learning • Computer Vision • Full-Stack Developer
-          </p>
-          <div class="flex gap-4 animate-slideInUp" style="animation-delay: 0.4s;">
-            <a href="#projects" class="btn-neon hover:shadow-neon hover:scale-105 transition-all">Explore Work</a>
-            <a href="#contact" class="btn-neon-outline hover:border-neon-green/80 transition-all">Get In Touch</a>
+      <div class="hero-grid">
+        <div class="hero-left reveal" data-animate="left">
+          <p class="hero-kicker">Hello! I'm</p>
+          <h1 class="hero-name">TRISTAN JAY</h1>
+          <p class="hero-sub">AI Specialist</p>
+        </div>
+
+        <div class="hero-center reveal" data-animate="up">
+          <div class="hero-avatar">
+            <canvas id="hero3d" class="hero-3d" aria-label="3D hero figure"></canvas>
+            <div id="hero3dFallback" class="hero-3d-fallback" aria-hidden="true">3D model not loaded</div>
+            <span class="hero-glow"></span>
           </div>
         </div>
 
-        <!-- Floating Cards -->
-        <div class="relative h-96 hidden lg:block">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-dark-secondary/60 backdrop-blur-lg border border-neon-green/30 rounded-2xl flex items-center justify-center text-5xl animate-orbitSmall">
-            🤖
-          </div>
-          <div class="absolute top-32 right-40 w-32 h-32 bg-dark-secondary/60 backdrop-blur-lg border border-neon-blue/30 rounded-2xl flex items-center justify-center text-5xl animate-orbitMedium" style="animation-delay: 1s;">
-            💻
-          </div>
-          <div class="absolute top-64 right-20 w-32 h-32 bg-dark-secondary/60 backdrop-blur-lg border border-neon-purple/30 rounded-2xl flex items-center justify-center text-5xl animate-orbitLarge" style="animation-delay: 2s;">
-            👁️
-          </div>
+        <div class="hero-right reveal" data-animate="right">
+          <p class="hero-role-top">An</p>
+          <h2 class="hero-role">AI ENGINEER</h2>
+          <h3 class="hero-role-sub">FULL-STACK DEV</h3>
         </div>
       </div>
     </div>
   </section>
 
   <!-- About Section with wave animation background -->
-  <section id="about" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 150, 255, 0.22)" data-animate="up">
+  <section id="about" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 150, 255, 0.22)" data-animate="up" data-mission="About" data-xp="15">
     <!-- Animated tech wave background -->
     <div class="absolute inset-0 -z-10">
       <div class="absolute inset-0 opacity-30" style="background: linear-gradient(45deg, rgba(0, 255, 136, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 255, 136, 0.1) 75%, rgba(0, 255, 136, 0.1)), linear-gradient(45deg, rgba(0, 255, 136, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 255, 136, 0.1) 75%, rgba(0, 255, 136, 0.1)); background-size: 100px 100px; background-position: 0 0, 50px 50px; animation: gridFlow 30s linear infinite;"></div>
@@ -145,7 +146,7 @@ const portfolioData = {
   </section>
 
   <!-- Services Section with particle background -->
-  <section id="services" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(138, 43, 226, 0.2)" data-animate="up">
+  <section id="services" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(138, 43, 226, 0.2)" data-animate="up" data-mission="Services" data-xp="20">
     <!-- Particle/dot pattern background -->
     <div class="absolute inset-0 -z-10">
       <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(0, 255, 136, 0.1) 1px, transparent 1px); background-size: 50px 50px; opacity: 0.5;"></div>
@@ -173,7 +174,7 @@ const portfolioData = {
   </section>
 
   <!-- Expertise Section with flowing lines background -->
-  <section id="expertise" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 255, 136, 0.22)" data-animate="up">
+  <section id="expertise" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 255, 136, 0.22)" data-animate="up" data-mission="Expertise" data-xp="20">
     <div class="absolute inset-0 -z-10">
       <!-- Flowing tech lines -->
       <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(90deg, rgba(0, 255, 136, 0.2) 1px, transparent 1px), linear-gradient(0deg, rgba(0, 150, 255, 0.2) 1px, transparent 1px); background-size: 100px 100px; animation: gridFlow 40s linear infinite;"></div>
@@ -202,8 +203,48 @@ const portfolioData = {
     </div>
   </section>
 
+  <!-- Tech Stack Section -->
+  <section id="tech-stack" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 150, 255, 0.18)" data-animate="up">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle, rgba(0, 150, 255, 0.08) 1px, transparent 1px); background-size: 70px 70px;"></div>
+      <div class="absolute top-10 right-10 w-72 h-72 bg-neon-blue/10 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-10 left-10 w-80 h-80 bg-neon-green/10 rounded-full blur-3xl animate-float" style="animation-delay: 1.2s;"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="reveal" data-animate="up">
+        <SectionTitle title="Tech Stack" subtitle="Tools I Build With" />
+      </div>
+      <div class="tech-grid-icons">
+        {[
+          { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+          { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+          { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+          { name: 'Tailwind', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+          { name: 'Astro 6', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg' },
+          { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+          { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+          { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+          { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
+          { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+          { name: 'Django', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
+          { name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+          { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+          { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+          { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+          { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+        ].map((tech, idx) => (
+          <div class="tech-card reveal" data-animate="up" data-delay={idx * 60}>
+            <img class="tech-icon" src={tech.icon} alt={`${tech.name} logo`} loading="lazy" />
+            <div class="tech-name">{tech.name}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Experience Section with gradient flow background -->
-  <section id="experience" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 150, 255, 0.22)" data-animate="up">
+  <section id="experience" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 150, 255, 0.22)" data-animate="up" data-mission="Experience" data-xp="20">
     <div class="absolute inset-0 -z-10">
       <div class="absolute inset-0 bg-gradient-to-br from-neon-blue/10 via-dark-primary to-neon-green/10 animate-gradientShift"></div>
       <div class="absolute left-0 top-1/3 w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl opacity-50"></div>
@@ -237,7 +278,7 @@ const portfolioData = {
   </section>
 
   <!-- Projects Section with scattered particles background -->
-  <section id="projects" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(138, 43, 226, 0.22)" data-animate="up">
+  <section id="projects" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(138, 43, 226, 0.22)" data-animate="up" data-mission="Projects" data-xp="25">
     <div class="absolute inset-0 -z-10">
       <!-- Scattered particles -->
       {[...Array(25)].map((_, i) => (
@@ -275,7 +316,7 @@ const portfolioData = {
   </section>
 
   <!-- Education Section with minimal animated background -->
-  <section id="education" class="section-block section-accent reveal relative py-24" data-accent="rgba(0, 255, 136, 0.2)" data-animate="up">
+  <section id="education" class="section-block section-accent reveal relative py-24" data-accent="rgba(0, 255, 136, 0.2)" data-animate="up" data-mission="Education" data-xp="15">
     <div class="absolute inset-0 -z-10 opacity-20">
       <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, rgba(0, 255, 136, 0.1) 0px, rgba(0, 255, 136, 0.1) 1px, transparent 1px, transparent 100px); animation: gridFlow 60s linear infinite;"></div>
     </div>
@@ -294,7 +335,7 @@ const portfolioData = {
   </section>
 
   <!-- Certifications Section with radial gradient background -->
-  <section id="certifications" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 150, 255, 0.2)" data-animate="up">
+  <section id="certifications" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 150, 255, 0.2)" data-animate="up" data-mission="Certifications" data-xp="15">
     <div class="absolute inset-0 -z-10">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-neon-green/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
       <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-radial from-neon-blue/20 to-transparent rounded-full blur-3xl animate-float" style="animation-delay: 1.5s;"></div>
@@ -322,7 +363,7 @@ const portfolioData = {
   </section>
 
   <!-- Game Section -->
-  <section id="game" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 255, 136, 0.22)" data-animate="up">
+  <section id="game" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(0, 255, 136, 0.22)" data-animate="up" data-mission="Game" data-xp="20">
     <div class="absolute inset-0 -z-10">
       <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle, rgba(0, 255, 136, 0.12) 1px, transparent 1px); background-size: 60px 60px;"></div>
       <div class="absolute top-12 left-1/3 w-80 h-80 bg-neon-green/10 rounded-full blur-3xl animate-float"></div>
@@ -373,7 +414,7 @@ const portfolioData = {
   </section>
 
   <!-- Contact Section with electric effect background -->
-  <section id="contact" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(138, 43, 226, 0.2)" data-animate="up">
+  <section id="contact" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(138, 43, 226, 0.2)" data-animate="up" data-mission="Contact" data-xp="15">
     <div class="absolute inset-0 -z-10">
       <!-- Electric lines effect -->
       <div class="absolute inset-0 opacity-20" style="background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 136, 0.1) 50%, transparent 100%), linear-gradient(0deg, transparent 0%, rgba(0, 150, 255, 0.1) 50%, transparent 100%); background-size: 200% 200%; animation: gradientShift 8s ease infinite;"></div>
@@ -453,6 +494,229 @@ const portfolioData = {
     transform: translateY(0);
   }
 
+  .section-accent::before {
+    content: '';
+    position: absolute;
+    inset: -20% -10%;
+    background: radial-gradient(50% 50% at 10% 20%, rgba(0, 255, 136, 0.12), transparent 60%),
+      radial-gradient(40% 40% at 80% 30%, rgba(0, 150, 255, 0.14), transparent 60%),
+      radial-gradient(45% 45% at 30% 80%, rgba(138, 43, 226, 0.12), transparent 60%);
+    opacity: 0.4;
+    filter: blur(20px);
+    animation: aiNebula 16s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes aiNebula {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(-2%, 1%, 0) scale(1.05);
+    }
+  }
+
+  .constellation-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .constellation-cursor {
+    position: fixed;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 255, 136, 0.9);
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.8), rgba(0, 255, 136, 0) 65%);
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.8), 0 0 40px rgba(0, 150, 255, 0.4);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  body {
+    cursor: none;
+  }
+
+  a,
+  button,
+  [role='button'],
+  input,
+  textarea {
+    cursor: none;
+  }
+
+  .hero-top {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #d4d4d4;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-email {
+    color: #c7c7c7;
+  }
+
+  .hero-nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .hero-nav a {
+    color: #dcdcdc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .hero-nav a:hover {
+    color: #00ff88;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    min-height: 70vh;
+  }
+
+  .hero-left {
+    text-transform: uppercase;
+  }
+
+  .hero-kicker {
+    color: #c9a6ff;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-name {
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
+    font-weight: 800;
+    line-height: 1.05;
+  }
+
+  .hero-sub {
+    margin-top: 1rem;
+    color: #b3b3b3;
+  }
+
+  .hero-center {
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-avatar {
+    position: relative;
+    width: min(360px, 80vw);
+    aspect-ratio: 1 / 1.1;
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-3d {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 42px rgba(138, 43, 226, 0.75));
+  }
+
+  .hero-3d {
+    background: transparent;
+    outline: none;
+  }
+
+  .hero-3d-fallback {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .hero-3d-fallback.is-visible {
+    opacity: 1;
+  }
+
+  .hero-eye {
+    transform-origin: center;
+    transition: transform 0.1s ease;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 0%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(40px);
+    z-index: -1;
+  }
+
+
+  .hero-right {
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .hero-role-top {
+    color: #b3b3b3;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-role {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    color: #c89cff;
+  }
+
+  .hero-role-sub {
+    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    margin-top: 0.6rem;
+  }
+
+  .hero-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 980px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-right {
+      text-align: center;
+    }
+
+    .hero-top {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -498,6 +762,36 @@ const portfolioData = {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .tech-grid-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .tech-card {
+    background: rgba(10, 14, 26, 0.6);
+    border: 1px solid rgba(0, 150, 255, 0.25);
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 22px rgba(0, 150, 255, 0.15);
+  }
+
+  .tech-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 0.6rem;
+    object-fit: contain;
+  }
+
+  .tech-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #d7ecff;
   }
 
   .contact-form input,
@@ -692,6 +986,120 @@ const portfolioData = {
   );
 
   sections.forEach((section) => sectionObserver.observe(section));
+
+  const constellationCanvas = document.getElementById('constellationCanvas');
+  const constellationCursor = document.getElementById('constellationCursor');
+  const heroCanvas = document.getElementById('hero3d');
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let constellationActive = false;
+
+  if (constellationCanvas) {
+    const ctx = constellationCanvas.getContext('2d');
+    const stars = [];
+    const starCount = 70;
+    const linkDistance = 130;
+
+    const resizeCanvas = () => {
+      const dpr = window.devicePixelRatio || 1;
+      constellationCanvas.width = window.innerWidth * dpr;
+      constellationCanvas.height = window.innerHeight * dpr;
+      constellationCanvas.style.width = `${window.innerWidth}px`;
+      constellationCanvas.style.height = `${window.innerHeight}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    const createStars = () => {
+      stars.length = 0;
+      for (let i = 0; i < starCount; i += 1) {
+        stars.push({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          r: Math.random() * 1.8 + 0.6,
+          vx: (Math.random() - 0.5) * 0.2,
+          vy: (Math.random() - 0.5) * 0.2,
+        });
+      }
+    };
+
+    const draw = () => {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      ctx.fillStyle = 'rgba(0, 255, 136, 0.7)';
+
+      stars.forEach((star) => {
+        star.x += star.vx;
+        star.y += star.vy;
+        if (star.x < 0 || star.x > window.innerWidth) star.vx *= -1;
+        if (star.y < 0 || star.y > window.innerHeight) star.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      ctx.strokeStyle = 'rgba(0, 255, 136, 0.12)';
+      for (let i = 0; i < stars.length; i += 1) {
+        for (let j = i + 1; j < stars.length; j += 1) {
+          const dx = stars[i].x - stars[j].x;
+          const dy = stars[i].y - stars[j].y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < linkDistance) {
+            ctx.globalAlpha = 1 - dist / linkDistance;
+            ctx.beginPath();
+            ctx.moveTo(stars[i].x, stars[i].y);
+            ctx.lineTo(stars[j].x, stars[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      if (constellationActive) {
+        ctx.strokeStyle = 'rgba(0, 150, 255, 0.45)';
+        stars.forEach((star) => {
+          const dx = star.x - mouseX;
+          const dy = star.y - mouseY;
+          const dist = Math.hypot(dx, dy);
+          if (dist < linkDistance) {
+            ctx.globalAlpha = 1 - dist / linkDistance;
+            ctx.beginPath();
+            ctx.moveTo(star.x, star.y);
+            ctx.lineTo(mouseX, mouseY);
+            ctx.stroke();
+          }
+        });
+      }
+
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(draw);
+    };
+
+    resizeCanvas();
+    createStars();
+    requestAnimationFrame(draw);
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      createStars();
+    });
+  }
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (constellationCursor) {
+      constellationCursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    }
+  });
+
+  document.querySelectorAll('.section-block').forEach((section) => {
+    section.addEventListener('mouseenter', () => {
+      constellationActive = true;
+    });
+    section.addEventListener('mouseleave', () => {
+      constellationActive = false;
+    });
+  });
+
+  // 3D hero is initialized in the module script below.
 
   const canvas = document.getElementById('gameCanvas');
   if (canvas) {
@@ -967,5 +1375,155 @@ const portfolioData = {
     });
 
     requestAnimationFrame(loop);
+  }
+</script>
+
+<script is:inline type="module">
+  import * as THREE from 'https://esm.sh/three@0.161.0';
+  import { GLTFLoader } from 'https://esm.sh/three@0.161.0/examples/jsm/loaders/GLTFLoader.js';
+
+  const canvas = document.getElementById('hero3d');
+  const fallback = document.getElementById('hero3dFallback');
+  if (canvas) {
+    console.log('[hero3d] init');
+    const scene = new THREE.Scene();
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.1;
+    renderer.physicallyCorrectLights = true;
+    const resizeRenderer = () => {
+      const rect = canvas.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) return;
+      renderer.setSize(rect.width, rect.height, false);
+      camera.aspect = rect.width / rect.height;
+      camera.updateProjectionMatrix();
+    };
+
+    const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+    camera.position.set(0, 1.35, 2.1);
+    camera.lookAt(0, 1.05, 0);
+
+    const ambient = new THREE.AmbientLight(0x8aa0ff, 0.55);
+    scene.add(ambient);
+
+    const keyLight = new THREE.DirectionalLight(0xffffff, 1.4);
+    keyLight.position.set(2, 2, 3);
+    scene.add(keyLight);
+
+    const rim = new THREE.PointLight(0x8a2be2, 2.0, 10);
+    rim.position.set(-2, 1, -2);
+    scene.add(rim);
+
+    const fill = new THREE.PointLight(0x00ff88, 1.1, 6);
+    fill.position.set(1.5, -1, 2);
+    scene.add(fill);
+
+    const hemi = new THREE.HemisphereLight(0xbfd6ff, 0x202430, 0.45);
+    scene.add(hemi);
+
+    const loader = new GLTFLoader();
+    const modelUrl = '/hero.glb';
+    let model = null;
+    let baseY = -0.4;
+
+    loader.load(
+      modelUrl,
+      (gltf) => {
+        console.log('[hero3d] model loaded');
+        if (fallback) fallback.classList.remove('is-visible');
+        model = gltf.scene;
+        model.traverse((child) => {
+          if (child.isMesh && child.material) {
+            const mats = Array.isArray(child.material) ? child.material : [child.material];
+            mats.forEach((mat) => {
+              if (mat.map) {
+                mat.map.colorSpace = THREE.SRGBColorSpace;
+              }
+              mat.roughness = mat.roughness ?? 0.6;
+              mat.metalness = mat.metalness ?? 0.1;
+              mat.needsUpdate = true;
+            });
+            child.castShadow = false;
+            child.receiveShadow = false;
+          }
+        });
+        const box = new THREE.Box3().setFromObject(model);
+        const size = new THREE.Vector3();
+        const center = new THREE.Vector3();
+        box.getSize(size);
+        box.getCenter(center);
+        console.log('[hero3d] model bounds', size);
+        model.position.sub(center);
+
+        const targetHeight = 2.2;
+        const scale = targetHeight / Math.max(size.y, 0.0001);
+        model.scale.setScalar(scale);
+        model.position.set(0, 0, 0);
+        scene.add(model);
+
+        const scaledBox = new THREE.Box3().setFromObject(model);
+        const scaledSize = new THREE.Vector3();
+        const scaledCenter = new THREE.Vector3();
+        scaledBox.getSize(scaledSize);
+        scaledBox.getCenter(scaledCenter);
+
+        const chestY = scaledBox.max.y - scaledSize.y * 0.55;
+        const lookY = scaledBox.max.y - scaledSize.y * 0.18;
+        const cameraZ = Math.max(scaledSize.y, scaledSize.z) * 1.05;
+        camera.position.set(0, lookY + scaledSize.y * 0.05, cameraZ);
+        camera.lookAt(0, lookY, 0);
+
+        renderer.localClippingEnabled = true;
+        const clipPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), -chestY);
+        model.traverse((child) => {
+          if (child.isMesh && child.material) {
+            const mats = Array.isArray(child.material) ? child.material : [child.material];
+            mats.forEach((mat) => {
+              mat.clippingPlanes = [clipPlane];
+              mat.clipShadows = true;
+              mat.needsUpdate = true;
+            });
+          }
+        });
+        resizeRenderer();
+        // Debug helper removed.
+      },
+      undefined,
+      (err) => {
+        console.error('[hero3d] model failed', err);
+        if (fallback) fallback.classList.add('is-visible');
+      }
+    );
+
+    let targetX = 0;
+    let targetY = 0;
+
+    const onMove = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const nx = (e.clientX - rect.left) / rect.width - 0.5;
+      const ny = (e.clientY - rect.top) / rect.height - 0.5;
+      targetX = nx;
+      targetY = ny;
+    };
+
+    canvas.addEventListener('mousemove', onMove);
+
+    window.addEventListener('resize', resizeRenderer);
+    resizeRenderer();
+
+    const clock = new THREE.Clock();
+    const animate = () => {
+      const t = clock.getElapsedTime();
+      if (model) {
+        model.rotation.y = targetX * 0.8;
+        model.rotation.x = -targetY * 0.5;
+        model.position.y = baseY + Math.sin(t * 1.4) * 0.03;
+      }
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    };
+    animate();
   }
 </script>
