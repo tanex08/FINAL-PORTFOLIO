@@ -23,11 +23,11 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
     <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
       <!-- Floating particles -->
       <div
-        class="absolute top-20 right-10 w-72 h-72 bg-neon-green bg-opacity-10 rounded-full blur-3xl animate-float"
+        class="absolute top-20 right-10 w-72 h-72 bg-neon-purple bg-opacity-10 rounded-full blur-3xl animate-float"
         style="animation-delay: 0s"
       ></div>
       <div
-        class="absolute top-1/2 left-1/4 w-96 h-96 bg-neon-blue bg-opacity-10 rounded-full blur-3xl animate-float"
+        class="absolute top-1/2 left-1/4 w-96 h-96 bg-neon-purple bg-opacity-10 rounded-full blur-3xl animate-float"
         style="animation-delay: 0.5s"
       ></div>
       <div
@@ -37,10 +37,14 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
 
       <!-- Animated grid -->
       <div
-        class="absolute inset-0 opacity-20"
-        style="background-image: linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px); background-size: 50px 50px; animation: gridFlow 30s linear infinite"
+        class="absolute inset-0 opacity-10"
+        style="background-image: linear-gradient(rgba(255, 168, 210, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 179, 106, 0.1) 1px, transparent 1px); background-size: 50px 50px; animation: gridFlow 30s linear infinite"
       ></div>
     </div>
+    <div class="ai-city-bg" aria-hidden="true"></div>
+    <div class="ai-data-bg" aria-hidden="true"></div>
+    <div class="ai-circuit-bg" aria-hidden="true"></div>
+    <div class="ai-visibility-overlay" aria-hidden="true"></div>
 
     <!-- Loading screen -->
     <LoadingScreen />
@@ -54,6 +58,7 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
     </main>
 
     <style is:global>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Zen+Dots&display=swap');
       :root {
         --color-primary: #00ff88;
         --color-secondary: #0096ff;
@@ -64,6 +69,10 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
         --color-text-light: #b0b0b0;
       }
 
+      body {
+        font-family: 'Space Grotesk', system-ui, sans-serif;
+      }
+
       @keyframes gridFlow {
         0% { background-position: 0 0; }
         100% { background-position: 100px 100px; }
@@ -72,6 +81,70 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
       @keyframes float {
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-20px); }
+      }
+
+      .ai-city-bg {
+        position: fixed;
+        inset: 0;
+        background-image: url('/bg-anime-city.gif');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.35;
+        filter: blur(0.4px) saturate(1.25) contrast(1.1);
+        mix-blend-mode: screen;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .ai-data-bg {
+        position: fixed;
+        inset: 0;
+        background-image: url('/bg-data-stream.gif');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.02;
+        mix-blend-mode: screen;
+        filter: blur(0.4px);
+        animation: dataDrift 20s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .ai-circuit-bg {
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(90deg, rgba(255, 168, 210, 0.04) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(120, 190, 255, 0.035) 1px, transparent 1px);
+        background-size: 120px 120px;
+        opacity: 0.08;
+        mix-blend-mode: screen;
+        filter: blur(0.3px);
+        animation: circuitFlow 18s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .ai-visibility-overlay {
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(circle at 15% 20%, rgba(18, 12, 26, 0.5), transparent 55%),
+          radial-gradient(circle at 80% 30%, rgba(18, 12, 26, 0.45), transparent 60%),
+          linear-gradient(180deg, rgba(16, 10, 24, 0.6), rgba(16, 10, 24, 0.35));
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      @keyframes dataDrift {
+        0% { background-position: 0 0; }
+        100% { background-position: 0 -200px; }
+      }
+
+      @keyframes circuitFlow {
+        0% { background-position: 0 0, 0 0; }
+        100% { background-position: 240px 0, 0 240px; }
       }
     </style>
   </body>

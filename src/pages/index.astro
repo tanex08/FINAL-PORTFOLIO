@@ -86,7 +86,7 @@ const portfolioData = {
       <div class="hero-grid">
         <div class="hero-left reveal" data-animate="left">
           <p class="hero-kicker">Hello! I'm</p>
-          <h1 class="hero-name">TRISTAN JAY</h1>
+          <h3 class="hero-name">TANEX</h3>
           <p class="hero-sub">AI Specialist</p>
         </div>
 
@@ -100,8 +100,7 @@ const portfolioData = {
 
         <div class="hero-right reveal" data-animate="right">
           <p class="hero-role-top">An</p>
-          <h2 class="hero-role">AI ENGINEER</h2>
-          <h3 class="hero-role-sub">FULL-STACK DEV</h3>
+          <h2 class="hero-role-sub">AI DEVELOPER</h2>
         </div>
       </div>
     </div>
@@ -477,6 +476,121 @@ const portfolioData = {
     scroll-margin-top: 80px;
   }
 
+  .section-block > .absolute.inset-0.-z-10 {
+    opacity: 0.08;
+  }
+
+  .section-block > .max-w-6xl,
+  .section-block > .max-w-4xl {
+    background: rgba(10, 14, 26, 0.32);
+    border: 0;
+    border-radius: 24px;
+    padding: 2.75rem 2.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 18px rgba(255, 140, 120, 0.1);
+  }
+
+  .section-block h1,
+  .section-block h2,
+  .section-block h3 {
+    font-family: 'Zen Dots', 'Space Grotesk', sans-serif;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 18px rgba(255, 140, 180, 0.35);
+  }
+
+  .section-block p,
+  .section-block li,
+  .section-block span {
+    text-shadow: 0 0 12px rgba(40, 20, 60, 0.35);
+  }
+
+  .section-block .gradient-text-purple {
+    background: linear-gradient(120deg, #ff85b6 0%, #ffb36a 55%, #a1e3ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-block .hero-kicker,
+  .section-block .hero-sub {
+    color: #ffd0e6;
+  }
+
+  .section-block h1,
+  .section-block h2,
+  .section-block h3 {
+    color: #ffc3d9;
+  }
+
+  .section-block .text-neon-green {
+    color: #ff9ad1;
+  }
+
+  .section-block .text-neon-blue {
+    color: #ffb36a;
+  }
+
+  .section-block .card-glass,
+  .section-block .tech-card {
+    border-color: rgba(255, 168, 210, 0.25);
+    box-shadow: 0 0 22px rgba(255, 140, 120, 0.15);
+  }
+
+  .section-block .card-glass:hover,
+  .section-block .tech-card:hover {
+    border-color: rgba(255, 160, 110, 0.6);
+    box-shadow: 0 0 32px rgba(255, 160, 110, 0.25);
+  }
+
+  .section-block .btn-neon {
+    background: linear-gradient(135deg, #ff85b6 0%, #ffb36a 100%);
+    color: #1a0b18;
+    box-shadow: 0 0 25px rgba(255, 140, 120, 0.35);
+  }
+
+  .section-block .btn-neon:hover {
+    box-shadow: 0 0 35px rgba(255, 140, 120, 0.6);
+  }
+
+  :global(#sidebar .nav-item) {
+    background: rgba(255, 133, 182, 0.08);
+    border-color: rgba(255, 133, 182, 0.2);
+    color: #ffd0e6;
+  }
+
+  :global(#sidebar .nav-item:hover) {
+    background: rgba(255, 133, 182, 0.2);
+    border-color: rgba(255, 179, 106, 0.5);
+    color: #ffb36a;
+  }
+
+  :global(#sidebar .action-btn) {
+    color: #ffb36a;
+    border-color: rgba(255, 179, 106, 0.35);
+    background: rgba(255, 133, 182, 0.12);
+  }
+
+  :global(.hero-name) {
+    text-shadow: 0 0 25px rgba(255, 140, 180, 0.55);
+  }
+
+  :global(.hero-role) {
+    color: #ffb36a;
+    text-shadow: 0 0 18px rgba(255, 179, 106, 0.45);
+  }
+
+  .section-block .btn-neon-outline {
+    border-color: rgba(255, 168, 210, 0.75);
+    color: #ffb36a;
+  }
+
+  @media (max-width: 768px) {
+    .section-block > .max-w-6xl,
+    .section-block > .max-w-4xl {
+      padding: 2.25rem 1.5rem;
+    }
+  }
+
   .section-accent::after {
     content: '';
     position: absolute;
@@ -490,7 +604,7 @@ const portfolioData = {
   }
 
   .section-accent.is-active::after {
-    opacity: 0.7;
+    opacity: 0.2;
     transform: translateY(0);
   }
 
@@ -498,10 +612,10 @@ const portfolioData = {
     content: '';
     position: absolute;
     inset: -20% -10%;
-    background: radial-gradient(50% 50% at 10% 20%, rgba(0, 255, 136, 0.12), transparent 60%),
-      radial-gradient(40% 40% at 80% 30%, rgba(0, 150, 255, 0.14), transparent 60%),
-      radial-gradient(45% 45% at 30% 80%, rgba(138, 43, 226, 0.12), transparent 60%);
-    opacity: 0.4;
+    background: radial-gradient(50% 50% at 10% 20%, rgba(255, 168, 210, 0.12), transparent 60%),
+      radial-gradient(40% 40% at 80% 30%, rgba(255, 179, 106, 0.12), transparent 60%),
+      radial-gradient(45% 45% at 30% 80%, rgba(161, 227, 255, 0.1), transparent 60%);
+    opacity: 0.18;
     filter: blur(20px);
     animation: aiNebula 16s ease-in-out infinite;
     pointer-events: none;
@@ -529,9 +643,9 @@ const portfolioData = {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    border: 2px solid rgba(0, 255, 136, 0.9);
-    background: radial-gradient(circle, rgba(0, 255, 136, 0.8), rgba(0, 255, 136, 0) 65%);
-    box-shadow: 0 0 18px rgba(0, 255, 136, 0.8), 0 0 40px rgba(0, 150, 255, 0.4);
+    border: 2px solid rgba(255, 168, 210, 0.9);
+    background: radial-gradient(circle, rgba(255, 168, 210, 0.8), rgba(255, 168, 210, 0) 65%);
+    box-shadow: 0 0 18px rgba(255, 168, 210, 0.7), 0 0 40px rgba(255, 179, 106, 0.35);
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 1;
@@ -586,7 +700,7 @@ const portfolioData = {
 
   .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-columns: 1.1fr 1.2fr 0.9fr;
     gap: 2rem;
     align-items: center;
     min-height: 70vh;
@@ -594,6 +708,7 @@ const portfolioData = {
 
   .hero-left {
     text-transform: uppercase;
+    padding-right: 1rem;
   }
 
   .hero-kicker {
@@ -675,6 +790,10 @@ const portfolioData = {
   .hero-right {
     text-transform: uppercase;
     text-align: left;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    padding-left: 0.5rem;
+    min-width: 0;
   }
 
   .hero-role-top {
@@ -683,15 +802,19 @@ const portfolioData = {
   }
 
   .hero-role {
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: clamp(1.8rem, 3.2vw, 2.8rem);
     font-weight: 800;
     color: #c89cff;
+    max-width: 100%;
+    word-break: break-word;
   }
 
   .hero-role-sub {
-    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+    font-size: clamp(1.4rem, 2.8vw, 2.4rem);
     font-weight: 800;
     margin-top: 0.6rem;
+    max-width: 100%;
+    word-break: break-word;
   }
 
   .hero-actions {
@@ -1024,7 +1147,7 @@ const portfolioData = {
 
     const draw = () => {
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      ctx.fillStyle = 'rgba(0, 255, 136, 0.7)';
+      ctx.fillStyle = 'rgba(255, 168, 210, 0.6)';
 
       stars.forEach((star) => {
         star.x += star.vx;
@@ -1036,7 +1159,7 @@ const portfolioData = {
         ctx.fill();
       });
 
-      ctx.strokeStyle = 'rgba(0, 255, 136, 0.12)';
+      ctx.strokeStyle = 'rgba(255, 168, 210, 0.12)';
       for (let i = 0; i < stars.length; i += 1) {
         for (let j = i + 1; j < stars.length; j += 1) {
           const dx = stars[i].x - stars[j].x;
@@ -1053,7 +1176,7 @@ const portfolioData = {
       }
 
       if (constellationActive) {
-        ctx.strokeStyle = 'rgba(0, 150, 255, 0.45)';
+        ctx.strokeStyle = 'rgba(255, 179, 106, 0.45)';
         stars.forEach((star) => {
           const dx = star.x - mouseX;
           const dy = star.y - mouseY;
@@ -1381,6 +1504,7 @@ const portfolioData = {
 <script is:inline type="module">
   import * as THREE from 'https://esm.sh/three@0.161.0';
   import { GLTFLoader } from 'https://esm.sh/three@0.161.0/examples/jsm/loaders/GLTFLoader.js';
+  import { DRACOLoader } from 'https://esm.sh/three@0.161.0/examples/jsm/loaders/DRACOLoader.js';
 
   const canvas = document.getElementById('hero3d');
   const fallback = document.getElementById('hero3dFallback');
@@ -1424,6 +1548,9 @@ const portfolioData = {
     scene.add(hemi);
 
     const loader = new GLTFLoader();
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+    loader.setDRACOLoader(dracoLoader);
     const modelUrl = '/hero.glb';
     let model = null;
     let baseY = -0.4;
@@ -1464,29 +1591,21 @@ const portfolioData = {
         scene.add(model);
 
         const scaledBox = new THREE.Box3().setFromObject(model);
-        const scaledSize = new THREE.Vector3();
         const scaledCenter = new THREE.Vector3();
-        scaledBox.getSize(scaledSize);
         scaledBox.getCenter(scaledCenter);
+        model.position.sub(scaledCenter);
 
-        const chestY = scaledBox.max.y - scaledSize.y * 0.55;
-        const lookY = scaledBox.max.y - scaledSize.y * 0.18;
-        const cameraZ = Math.max(scaledSize.y, scaledSize.z) * 1.05;
-        camera.position.set(0, lookY + scaledSize.y * 0.05, cameraZ);
+        const fitBox = new THREE.Box3().setFromObject(model);
+        const sphere = new THREE.Sphere();
+        fitBox.getBoundingSphere(sphere);
+        const radius = Math.max(sphere.radius, 0.0001);
+
+        const fov = (camera.fov * Math.PI) / 180;
+        const cameraZ = radius / Math.tan(fov / 2) * 0.8;
+        const lookY = radius * 0.2;
+        camera.position.set(0, lookY, cameraZ);
         camera.lookAt(0, lookY, 0);
-
-        renderer.localClippingEnabled = true;
-        const clipPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), -chestY);
-        model.traverse((child) => {
-          if (child.isMesh && child.material) {
-            const mats = Array.isArray(child.material) ? child.material : [child.material];
-            mats.forEach((mat) => {
-              mat.clippingPlanes = [clipPlane];
-              mat.clipShadows = true;
-              mat.needsUpdate = true;
-            });
-          }
-        });
+        renderer.localClippingEnabled = false;
         resizeRenderer();
         // Debug helper removed.
       },
@@ -1504,11 +1623,11 @@ const portfolioData = {
       const rect = canvas.getBoundingClientRect();
       const nx = (e.clientX - rect.left) / rect.width - 0.5;
       const ny = (e.clientY - rect.top) / rect.height - 0.5;
-      targetX = nx;
-      targetY = ny;
+      targetX = Math.max(-0.5, Math.min(0.5, nx));
+      targetY = Math.max(-0.5, Math.min(0.5, ny));
     };
 
-    canvas.addEventListener('mousemove', onMove);
+    window.addEventListener('mousemove', onMove);
 
     window.addEventListener('resize', resizeRenderer);
     resizeRenderer();
