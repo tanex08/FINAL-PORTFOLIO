@@ -10,8 +10,10 @@ interface Props {
 const { title, description, icon, tags, href } = Astro.props;
 ---
 
-<div class="group card-glass relative overflow-hidden">
+<div class="group card-glass relative overflow-hidden card-tilt">
   <div class="absolute inset-0 bg-gradient-to-r from-transparent via-neon-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  <div class="absolute inset-0 pointer-events-none card-holo"></div>
+  <div class="absolute inset-0 pointer-events-none card-spot"></div>
 
   <div class="relative z-10">
     {icon && (
@@ -46,6 +48,31 @@ const { title, description, icon, tags, href } = Astro.props;
 <style>
   .card-glass {
     @apply bg-dark-secondary/60 backdrop-blur-lg border border-neon-green/20 rounded-2xl p-6 transition-all duration-300 hover:border-neon-green/50 hover:-translate-y-2;
+  }
+
+  .card-holo {
+    background: linear-gradient(130deg, rgba(255, 168, 210, 0.12), transparent 45%, rgba(161, 227, 255, 0.18));
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .card-glass:hover .card-holo {
+    opacity: 1;
+  }
+
+  .card-tilt {
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease;
+  }
+
+  .card-spot {
+    opacity: 0;
+    background: radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(255, 179, 106, 0.35), transparent 55%);
+    transition: opacity 0.2s ease;
+  }
+
+  .card-tilt:hover .card-spot {
+    opacity: 1;
   }
 
   @keyframes slideUp {

@@ -43,6 +43,7 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
     <div class="ai-city-bg" aria-hidden="true"></div>
     <div class="ai-data-bg" aria-hidden="true"></div>
     <div class="ai-circuit-bg" aria-hidden="true"></div>
+    <div class="ai-stream-lines" aria-hidden="true"></div>
     <canvas id="world3d" class="world-3d" aria-hidden="true"></canvas>
     <div class="ai-visibility-overlay" aria-hidden="true"></div>
 
@@ -65,6 +66,7 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
         --color-darker: #050609;
         --color-text: #e0e0e0;
         --color-text-light: #b0b0b0;
+        --hue-shift: 0deg;
       }
 
       body {
@@ -88,7 +90,7 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
         background-size: cover;
         background-position: center;
         opacity: 0.35;
-        filter: blur(0.4px) saturate(1.25) contrast(1.1);
+        filter: blur(0.4px) saturate(1.25) contrast(1.1) hue-rotate(var(--hue-shift));
         mix-blend-mode: screen;
         pointer-events: none;
         z-index: 0;
@@ -102,7 +104,7 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
         background-position: center;
         opacity: 0.02;
         mix-blend-mode: screen;
-        filter: blur(0.4px);
+        filter: blur(0.4px) hue-rotate(var(--hue-shift));
         animation: dataDrift 20s linear infinite;
         pointer-events: none;
         z-index: 0;
@@ -117,8 +119,22 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
         background-size: 120px 120px;
         opacity: 0.08;
         mix-blend-mode: screen;
-        filter: blur(0.3px);
+        filter: blur(0.3px) hue-rotate(var(--hue-shift));
         animation: circuitFlow 18s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .ai-stream-lines {
+        position: fixed;
+        inset: -10%;
+        background-image:
+          linear-gradient(120deg, rgba(255, 179, 106, 0.08) 2px, transparent 2px),
+          linear-gradient(300deg, rgba(161, 227, 255, 0.06) 2px, transparent 2px);
+        background-size: 280px 280px;
+        opacity: 0.2;
+        mix-blend-mode: screen;
+        animation: streamSlide 16s linear infinite;
         pointer-events: none;
         z-index: 0;
       }
@@ -144,6 +160,17 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
         z-index: 0;
       }
 
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(circle at 50% 50%, rgba(18, 12, 26, 0.05), rgba(8, 8, 14, 0.35));
+        animation: ambientDrift 14s ease-in-out infinite;
+        mix-blend-mode: screen;
+        z-index: 0;
+      }
+
       @keyframes dataDrift {
         0% { background-position: 0 0; }
         100% { background-position: 0 -200px; }
@@ -152,6 +179,16 @@ const { title = 'Tristan Jay - AI Specialist' } = Astro.props;
       @keyframes circuitFlow {
         0% { background-position: 0 0, 0 0; }
         100% { background-position: 240px 0, 0 240px; }
+      }
+
+      @keyframes streamSlide {
+        0% { background-position: 0 0, 0 0; }
+        100% { background-position: 280px -280px, -280px 280px; }
+      }
+
+      @keyframes ambientDrift {
+        0%, 100% { transform: translate(0, 0); opacity: 0.45; }
+        50% { transform: translate(-10px, 12px); opacity: 0.75; }
       }
     </style>
   </body>

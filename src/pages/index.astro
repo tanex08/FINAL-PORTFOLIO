@@ -61,6 +61,20 @@ const portfolioData = {
 <Layout title="Tristan Jay - AI Specialist Portfolio">
   <canvas id="constellationCanvas" class="constellation-canvas" aria-hidden="true"></canvas>
   <div id="constellationCursor" class="constellation-cursor" aria-hidden="true"></div>
+  <div class="system-ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Uptime 99.98%</span>
+      <span>Deployments 128</span>
+      <span>Model v2.4</span>
+      <span>Latency 62ms</span>
+      <span>Active Agents 6</span>
+      <span>Uptime 99.98%</span>
+      <span>Deployments 128</span>
+      <span>Model v2.4</span>
+      <span>Latency 62ms</span>
+      <span>Active Agents 6</span>
+    </div>
+  </div>
   <!-- Hero Section with animated gradient background -->
   <section id="home" class="section-block section-accent reveal relative min-h-screen overflow-hidden pt-24 pb-16" data-accent="rgba(0, 255, 136, 0.25)" data-animate="fade" data-mission="Home" data-xp="10">
     <!-- Animated background elements -->
@@ -78,11 +92,20 @@ const portfolioData = {
     </div>
 
     <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="hero-hud reveal" data-animate="fade" aria-hidden="true">
+        <div class="hud-chip">Model: Online</div>
+        <div class="hud-chip">Latency: 62ms</div>
+        <div class="hud-chip">Build: Stable</div>
+        <svg class="hud-graph" viewBox="0 0 120 40" aria-hidden="true">
+          <path d="M0 28 L18 18 L36 22 L54 10 L72 16 L90 6 L108 14 L120 8" />
+        </svg>
+      </div>
       <div class="hero-grid">
         <div class="hero-left reveal" data-animate="left">
           <p class="hero-kicker">Hello! I'm</p>
           <h3 class="hero-name">TANEX</h3>
           <p class="hero-sub">AI Specialist</p>
+          <div class="hero-badge">AI VERIFIED</div>
         </div>
 
         <div class="hero-center reveal" data-animate="up">
@@ -96,10 +119,32 @@ const portfolioData = {
         <div class="hero-right reveal" data-animate="right">
           <p class="hero-role-top">An</p>
           <h2 class="hero-role-sub">AI DEVELOPER</h2>
+          <div class="hero-output">
+            <div class="output-title">Model Output</div>
+            <div class="output-bar"><span style="width: 86%"></span></div>
+            <div class="output-meta">Confidence 0.86 · Session Active</div>
+            <div class="output-stream" id="outputStream" aria-live="polite"></div>
+          </div>
         </div>
+      </div>
+
+      <div class="hero-stats reveal" data-animate="up" data-delay="120">
+        {[
+          { label: 'AI Models Built', value: 1 },
+          { label: 'Full-Stack Projects', value: 4 },
+          { label: 'Years Building', value: 1 },
+          { label: 'Clients Served', value: 0 }
+        ].map((stat) => (
+          <div class="hero-stat">
+            <span class="hero-stat-value" data-count={stat.value}>0</span>
+            <span class="hero-stat-label">{stat.label}</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- About Section with wave animation background -->
   <section id="about" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(0, 150, 255, 0.22)" data-animate="up" data-mission="About" data-xp="15">
@@ -139,6 +184,8 @@ const portfolioData = {
     </div>
   </section>
 
+  <div class="section-divider" aria-hidden="true"></div>
+
   <!-- Services Section with particle background -->
   <section id="services" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(138, 43, 226, 0.2)" data-animate="up" data-mission="Services" data-xp="20">
     <!-- Particle/dot pattern background -->
@@ -166,6 +213,8 @@ const portfolioData = {
       </div>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- Expertise Section with flowing lines background -->
   <section id="expertise" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(0, 255, 136, 0.22)" data-animate="up" data-mission="Expertise" data-xp="20">
@@ -196,6 +245,8 @@ const portfolioData = {
       </div>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- Tech Stack Section -->
   <section id="tech-stack" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(0, 150, 255, 0.18)" data-animate="up">
@@ -234,8 +285,22 @@ const portfolioData = {
           </div>
         ))}
       </div>
+
+      <div class="tech-radar reveal" data-animate="up" data-delay="180">
+        <div class="radar-title">Stack Radar</div>
+        <svg viewBox="0 0 220 220" class="radar-svg">
+          <circle cx="110" cy="110" r="90" />
+          <circle cx="110" cy="110" r="60" />
+          <circle cx="110" cy="110" r="30" />
+          <line x1="110" y1="20" x2="110" y2="200" />
+          <line x1="20" y1="110" x2="200" y2="110" />
+          <polygon points="110,38 180,92 150,182 85,170 55,92" />
+        </svg>
+      </div>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- Experience Section with gradient flow background -->
   <section id="experience" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(0, 150, 255, 0.22)" data-animate="up" data-mission="Experience" data-xp="20">
@@ -270,6 +335,8 @@ const portfolioData = {
       </div>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- Projects Section with scattered particles background -->
   <section id="projects" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(138, 43, 226, 0.22)" data-animate="up" data-mission="Projects" data-xp="25">
@@ -306,8 +373,49 @@ const portfolioData = {
           </div>
         ))}
       </div>
+
+      <div class="vision-demo reveal" data-animate="up" data-delay="120">
+        <div class="vision-title">Vision Model Demo</div>
+        <div class="vision-frame">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1100&q=80" alt="Vision demo" loading="lazy" />
+          <div class="vision-box box-a">
+            <span>Face 0.96</span>
+          </div>
+          <div class="vision-box box-b">
+            <span>Jacket 0.88</span>
+          </div>
+          <div class="vision-box box-c">
+            <span>Background 0.82</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="metro-map reveal" data-animate="up" data-delay="140">
+        <div class="metro-title">Project Metro Map</div>
+        <svg viewBox="0 0 620 180" class="metro-svg" aria-hidden="true">
+          <path d="M30 90 L160 90 L220 40 L320 40 L380 90 L500 90 L580 140" />
+          <circle cx="30" cy="90" r="8" />
+          <circle cx="160" cy="90" r="8" />
+          <circle cx="220" cy="40" r="8" />
+          <circle cx="320" cy="40" r="8" />
+          <circle cx="380" cy="90" r="8" />
+          <circle cx="500" cy="90" r="8" />
+          <circle cx="580" cy="140" r="8" />
+        </svg>
+        <div class="metro-labels">
+          <span>Dress Code AI</span>
+          <span>Catering Platform</span>
+          <span>AI Ticketing</span>
+          <span>Vision Suite</span>
+          <span>Automation</span>
+          <span>IoT Lab</span>
+          <span>Deploy</span>
+        </div>
+      </div>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- Education Section with minimal animated background -->
   <section id="education" class="section-block section-accent reveal relative py-24 locked-section" data-accent="rgba(0, 255, 136, 0.2)" data-animate="up" data-mission="Education" data-xp="15">
@@ -327,6 +435,8 @@ const portfolioData = {
       </div>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- Certifications Section with radial gradient background -->
   <section id="certifications" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(0, 150, 255, 0.2)" data-animate="up" data-mission="Certifications" data-xp="15">
@@ -355,6 +465,8 @@ const portfolioData = {
       </div>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- Game Section -->
   <section id="game" class="section-block section-accent reveal relative py-24 overflow-hidden game-section locked-section" data-accent="rgba(0, 255, 136, 0.22)" data-animate="up" data-mission="Game" data-xp="20">
@@ -407,6 +519,8 @@ const portfolioData = {
     </div>
   </section>
 
+  <div class="section-divider" aria-hidden="true"></div>
+
   <section id="globe-nav" class="section-block section-accent reveal relative py-24 overflow-hidden" data-accent="rgba(255, 168, 210, 0.2)" data-animate="up">
     <div class="absolute inset-0 -z-10">
       <div class="absolute inset-0 opacity-15" style="background-image: radial-gradient(circle, rgba(255, 168, 210, 0.18) 1px, transparent 1px); background-size: 80px 80px;"></div>
@@ -456,6 +570,23 @@ const portfolioData = {
   <button id="gameFab" class="game-fab" aria-haspopup="dialog" aria-controls="gameModal">
     <span class="game-fab-label">Play</span>
   </button>
+
+  <button id="resumeFab" class="resume-fab" aria-haspopup="dialog" aria-controls="resumeModal">
+    <span class="resume-fab-label">Resume</span>
+  </button>
+
+  <div id="resumeModal" class="resume-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="resume-modal-backdrop"></div>
+    <div class="resume-modal-card">
+      <button id="resumeClose" class="resume-close" aria-label="Close resume">Ã—</button>
+      <div class="resume-frame">
+        <iframe src="/resume.pdf" title="Resume Preview"></iframe>
+        <div class="resume-fallback">
+          Resume preview not available. Drop your resume at <code>public/resume.pdf</code>.
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="chatModal" class="chat-modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="chat-modal-backdrop"></div>
@@ -511,6 +642,8 @@ const portfolioData = {
       </div>
     </div>
   </div>
+
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- Contact Section with electric effect background -->
   <section id="contact" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(138, 43, 226, 0.2)" data-animate="up" data-mission="Contact" data-xp="15">
@@ -581,6 +714,30 @@ const portfolioData = {
           <button type="submit" class="btn-neon w-full">Send Message</button>
         </form>
       </div>
+
+      <div class="contact-console reveal" data-animate="up" data-delay="160">
+        <div class="console-header">
+          <span class="console-dot red"></span>
+          <span class="console-dot yellow"></span>
+          <span class="console-dot green"></span>
+          <span class="console-title">AI Console</span>
+        </div>
+        <div class="console-body">
+          <div class="console-line"><span class="console-prompt">›</span> open_channel --contact</div>
+          <div class="console-line"><span class="console-prompt">›</span> status: awaiting message</div>
+          <div class="console-line"><span class="console-prompt">›</span> route: email | discord</div>
+        </div>
+      </div>
+
+      <div class="contact-logs reveal" data-animate="up" data-delay="180">
+        <div class="console-header">
+          <span class="console-dot red"></span>
+          <span class="console-dot yellow"></span>
+          <span class="console-dot green"></span>
+          <span class="console-title">Inference Logs</span>
+        </div>
+        <div class="console-body" id="contactLogs"></div>
+      </div>
     </div>
   </section>
 
@@ -627,6 +784,21 @@ const portfolioData = {
     opacity: 0.35;
     pointer-events: none;
     mix-blend-mode: screen;
+  }
+
+  .section-divider {
+    position: relative;
+    height: 1px;
+    margin: 0 auto 2.5rem;
+    width: min(720px, 90vw);
+    background: linear-gradient(90deg, transparent, rgba(255, 179, 106, 0.6), transparent);
+    box-shadow: 0 0 18px rgba(255, 179, 106, 0.35);
+    opacity: 0.3;
+  }
+
+  .section-divider.is-active {
+    opacity: 1;
+    animation: dividerPulse 1.2s ease;
   }
 
   .section-block > .absolute.inset-0.-z-10 {
@@ -677,6 +849,10 @@ const portfolioData = {
 
   .section-block.scroll-pop::before {
     animation: scrollPop 0.9s ease;
+  }
+
+  .section-block.scroll-pop::after {
+    animation: scanSweep 0.9s ease;
   }
 
   .section-block h1,
@@ -765,6 +941,268 @@ const portfolioData = {
     text-shadow: 0 0 35px rgba(255, 179, 106, 0.35);
   }
 
+  .hero-hud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+  }
+
+  .console-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.7rem;
+    color: rgba(255, 208, 230, 0.75);
+  }
+
+  .console-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .console-dot.red { background: #ff6b6b; }
+  .console-dot.yellow { background: #ffb36a; }
+  .console-dot.green { background: #4ade80; }
+
+  .console-title {
+    margin-left: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .console-body {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.78rem;
+    color: rgba(255, 208, 230, 0.9);
+  }
+
+  .console-line {
+    padding: 0.2rem 0;
+  }
+
+  .console-prompt {
+    color: #ffb36a;
+    margin-right: 0.4rem;
+  }
+
+  .hud-chip {
+    background: rgba(10, 14, 26, 0.6);
+    border: 1px solid rgba(255, 168, 210, 0.35);
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #ffd0e6;
+    box-shadow: 0 0 16px rgba(255, 140, 180, 0.2);
+  }
+
+  .hud-graph {
+    width: 120px;
+    height: 40px;
+    fill: none;
+    stroke: rgba(255, 179, 106, 0.9);
+    stroke-width: 2;
+    filter: drop-shadow(0 0 8px rgba(255, 179, 106, 0.7));
+  }
+
+  .hud-graph path {
+    stroke: rgba(255, 179, 106, 0.9);
+    fill: none;
+  }
+
+  .hero-stats {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .hero-stat {
+    background: rgba(10, 14, 26, 0.55);
+    border: 1px solid rgba(255, 168, 210, 0.25);
+    border-radius: 16px;
+    padding: 1rem 1.2rem;
+    text-align: left;
+    box-shadow: 0 0 18px rgba(255, 140, 180, 0.15);
+  }
+
+  .hero-stat-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffb36a;
+    text-shadow: 0 0 18px rgba(255, 179, 106, 0.35);
+  }
+
+  .hero-stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 208, 230, 0.8);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 179, 106, 0.7);
+    color: #ffb36a;
+    box-shadow: 0 0 18px rgba(255, 179, 106, 0.35);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-badge::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255, 179, 106, 0.6), transparent 70%);
+    transform: translateX(-60%);
+    animation: badgeScan 3.5s ease-in-out infinite;
+  }
+
+  .hero-output {
+    margin-top: 1.2rem;
+    background: rgba(10, 14, 26, 0.6);
+    border: 1px solid rgba(255, 168, 210, 0.25);
+    border-radius: 14px;
+    padding: 0.8rem 1rem;
+    box-shadow: 0 0 18px rgba(255, 140, 180, 0.18);
+  }
+
+  .output-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 208, 230, 0.85);
+    margin-bottom: 0.4rem;
+  }
+
+  .output-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 168, 210, 0.15);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .output-bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #ff85b6, #ffb36a);
+    box-shadow: 0 0 12px rgba(255, 179, 106, 0.4);
+    animation: outputPulse 2.4s ease-in-out infinite;
+  }
+
+  .output-meta {
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    color: rgba(255, 208, 230, 0.7);
+  }
+
+  .output-stream {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 208, 230, 0.85);
+    min-height: 1.2rem;
+  }
+
+
+  .tech-radar {
+    margin-top: 2.5rem;
+    background: rgba(10, 14, 26, 0.55);
+    border: 1px solid rgba(255, 168, 210, 0.2);
+    border-radius: 16px;
+    padding: 1.4rem;
+    max-width: 360px;
+    box-shadow: 0 0 24px rgba(255, 140, 180, 0.15);
+  }
+
+  .metro-map {
+    margin-top: 2.5rem;
+    background: rgba(10, 14, 26, 0.55);
+    border: 1px solid rgba(255, 168, 210, 0.2);
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 0 22px rgba(255, 140, 180, 0.15);
+  }
+
+  .metro-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 208, 230, 0.8);
+    margin-bottom: 1rem;
+  }
+
+  .metro-svg {
+    width: 100%;
+    height: 140px;
+    stroke: rgba(255, 179, 106, 0.85);
+    fill: rgba(255, 133, 182, 0.1);
+    stroke-width: 3;
+    filter: drop-shadow(0 0 12px rgba(255, 179, 106, 0.4));
+  }
+
+  .metro-svg circle {
+    fill: #ffb36a;
+    stroke: rgba(255, 208, 230, 0.9);
+    stroke-width: 2;
+  }
+
+  .metro-labels {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.6rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 208, 230, 0.8);
+  }
+
+  .contact-console {
+    margin-top: 2rem;
+    background: rgba(8, 10, 20, 0.8);
+    border: 1px solid rgba(255, 168, 210, 0.25);
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+    box-shadow: 0 0 24px rgba(255, 140, 180, 0.18);
+  }
+
+  #projects .card-glass {
+    position: relative;
+    overflow: hidden;
+    background: rgba(12, 14, 28, 0.6);
+  }
+
+  #projects .card-glass::before {
+    content: '';
+    position: absolute;
+    inset: -40% -30%;
+    background: linear-gradient(120deg, transparent 35%, rgba(161, 227, 255, 0.25) 55%, transparent 70%);
+    opacity: 0;
+    transform: translateX(-40%);
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  #projects .card-glass:hover::before {
+    opacity: 0.8;
+    animation: holoSweep 1.2s ease;
+  }
+
   @keyframes panelSheen {
     0% { transform: translateX(-35%); opacity: 0.2; }
     50% { transform: translateX(35%); opacity: 0.55; }
@@ -781,6 +1219,67 @@ const portfolioData = {
     50% { opacity: 1; box-shadow: 0 0 55px rgba(255, 179, 106, 0.4); }
     100% { opacity: 0.6; box-shadow: 0 0 30px rgba(255, 140, 180, 0.2); }
   }
+
+  @keyframes scanSweep {
+    0% { opacity: 0.15; background-position: 0 0; }
+    50% { opacity: 0.4; background-position: 120px 120px; }
+    100% { opacity: 0.15; background-position: 240px 240px; }
+  }
+
+  @keyframes dividerPulse {
+    0% { opacity: 0.2; transform: scaleX(0.6); }
+    60% { opacity: 1; transform: scaleX(1); }
+    100% { opacity: 0.4; transform: scaleX(1); }
+  }
+
+  @keyframes holoSweep {
+    0% { transform: translateX(-45%); opacity: 0.2; }
+    60% { transform: translateX(35%); opacity: 0.8; }
+    100% { transform: translateX(85%); opacity: 0; }
+  }
+
+  @keyframes badgeScan {
+    0% { transform: translateX(-70%); opacity: 0.1; }
+    50% { transform: translateX(20%); opacity: 0.6; }
+    100% { transform: translateX(80%); opacity: 0.1; }
+  }
+
+  @keyframes outputPulse {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+  }
+
+  .system-ticker {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 25;
+    width: min(720px, 90vw);
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .ticker-track {
+    display: inline-flex;
+    gap: 2rem;
+    padding: 0.4rem 1rem;
+    background: rgba(10, 14, 26, 0.65);
+    border: 1px solid rgba(255, 168, 210, 0.25);
+    border-radius: 999px;
+    color: rgba(255, 208, 230, 0.85);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    animation: tickerMove 14s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes tickerMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
 
   :global(#sidebar .nav-item) {
     background: rgba(255, 133, 182, 0.08);
@@ -994,6 +1493,12 @@ const portfolioData = {
     aspect-ratio: 1 / 1.1;
     display: grid;
     place-items: center;
+    z-index: 0;
+  }
+
+  .hero-avatar::before,
+  .hero-avatar::after {
+    content: none;
   }
 
   .hero-3d {
@@ -1001,6 +1506,7 @@ const portfolioData = {
     height: 100%;
     border-radius: 16px;
     filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 42px rgba(138, 43, 226, 0.75));
+    transition: transform 0.4s ease;
   }
 
   .hero-3d {
@@ -1220,6 +1726,7 @@ const portfolioData = {
     min-height: 420px;
     display: grid;
     place-items: center;
+    transition: transform 0.4s ease;
   }
 
   .globe-stage::before {
@@ -1435,6 +1942,103 @@ const portfolioData = {
     animation: fabFloat 5s ease-in-out infinite;
   }
 
+  .resume-fab {
+    position: fixed;
+    right: 28px;
+    bottom: 198px;
+    height: 52px;
+    padding: 0 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(161, 227, 255, 0.5);
+    background: rgba(10, 14, 26, 0.7);
+    color: #a1e3ff;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(161, 227, 255, 0.35);
+    cursor: pointer;
+    z-index: 19;
+  }
+
+  .resume-fab-label {
+    font-size: 0.7rem;
+  }
+
+  .resume-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 60;
+  }
+
+  .resume-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .resume-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 6, 12, 0.7);
+    backdrop-filter: blur(6px);
+  }
+
+  .resume-modal-card {
+    position: relative;
+    width: min(900px, 92vw);
+    height: min(80vh, 720px);
+    background: rgba(10, 14, 26, 0.9);
+    border-radius: 18px;
+    padding: 1rem;
+    box-shadow: 0 0 32px rgba(161, 227, 255, 0.35);
+    z-index: 1;
+  }
+
+  .resume-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(161, 227, 255, 0.4);
+    background: rgba(161, 227, 255, 0.15);
+    color: #a1e3ff;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  .resume-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .resume-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #0b0f1b;
+  }
+
+  .resume-fallback {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    background: rgba(10, 14, 26, 0.9);
+    opacity: 0;
+    pointer-events: none;
+  }
   .game-fab-label {
     font-size: 0.7rem;
   }
@@ -1816,15 +2420,25 @@ const portfolioData = {
   revealItems.forEach((el) => revealObserver.observe(el));
 
   const sections = document.querySelectorAll('.section-accent');
+  const dividers = document.querySelectorAll('.section-divider');
+  const sectionHueBase = 320;
+  sections.forEach((section, idx) => {
+    section.setAttribute('data-hue', String((sectionHueBase + idx * 18) % 360));
+  });
   const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const accent = entry.target.getAttribute('data-accent');
+          const hue = entry.target.getAttribute('data-hue');
           if (accent) {
             document.body.style.setProperty('--section-accent', accent);
           }
+          if (hue) {
+            document.body.style.setProperty('--hue-shift', `${hue}deg`);
+          }
           sections.forEach((section) => section.classList.remove('is-active'));
+          dividers.forEach((divider) => divider.classList.remove('is-active'));
           entry.target.classList.add('is-active');
         }
       });
@@ -1833,6 +2447,7 @@ const portfolioData = {
   );
 
   sections.forEach((section) => sectionObserver.observe(section));
+  dividers.forEach((divider) => sectionObserver.observe(divider));
 
   const scrollObserver = new IntersectionObserver(
     (entries) => {
@@ -1846,6 +2461,114 @@ const portfolioData = {
   );
 
   sections.forEach((section) => scrollObserver.observe(section));
+
+  const statObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const counter = entry.target;
+        const target = Number(counter.getAttribute('data-count') || 0);
+        let current = 0;
+        const duration = 1200;
+        const start = performance.now();
+        const tick = (now) => {
+          const progress = Math.min(1, (now - start) / duration);
+          current = Math.floor(progress * target);
+          counter.textContent = current.toString();
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        statObserver.unobserve(counter);
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  document.querySelectorAll('.hero-stat-value').forEach((el) => statObserver.observe(el));
+
+  const outputStream = document.getElementById('outputStream');
+  if (outputStream) {
+    const streamLines = [
+      'Inference: vision-core online...',
+      'Routing: build pipeline stable...',
+      'Signal: latency 62ms, uptime 99.9%...',
+      'Deploy: release candidate green...'
+    ];
+    let lineIndex = 0;
+    let charIndex = 0;
+    const typeNext = () => {
+      const line = streamLines[lineIndex];
+      outputStream.textContent = line.slice(0, charIndex);
+      charIndex += 1;
+      if (charIndex > line.length) {
+        charIndex = 0;
+        lineIndex = (lineIndex + 1) % streamLines.length;
+        setTimeout(typeNext, 800);
+        return;
+      }
+      setTimeout(typeNext, 40);
+    };
+    typeNext();
+  }
+
+  const cards = document.querySelectorAll('.card-tilt');
+  cards.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rx = ((y / rect.height) - 0.5) * 8;
+      const ry = ((x / rect.width) - 0.5) * -8;
+      card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+      card.style.setProperty('--spot-x', `${(x / rect.width) * 100}%`);
+      card.style.setProperty('--spot-y', `${(y / rect.height) * 100}%`);
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+  });
+
+  const contactLogs = document.getElementById('contactLogs');
+  if (contactLogs) {
+    const logLines = [
+      '[AI] Channel open: inbound',
+      '[SYS] Monitoring active: latency 62ms',
+      '[AI] Routing to email + discord',
+      '[SYS] Awaiting user payload...'
+    ];
+    let logIndex = 0;
+    const pushLog = () => {
+      const line = document.createElement('div');
+      line.className = 'console-line';
+      line.innerHTML = `<span class="console-prompt">›</span> ${logLines[logIndex]}`;
+      contactLogs.appendChild(line);
+      contactLogs.scrollTop = contactLogs.scrollHeight;
+      logIndex = (logIndex + 1) % logLines.length;
+      if (contactLogs.childElementCount > 6) {
+        contactLogs.removeChild(contactLogs.firstChild);
+      }
+    };
+    pushLog();
+    setInterval(pushLog, 2000);
+  }
+
+  const resumeFab = document.getElementById('resumeFab');
+  const resumeModal = document.getElementById('resumeModal');
+  const resumeClose = document.getElementById('resumeClose');
+  resumeFab?.addEventListener('click', () => {
+    resumeModal?.classList.add('is-open');
+    resumeModal?.setAttribute('aria-hidden', 'false');
+  });
+  resumeClose?.addEventListener('click', () => {
+    resumeModal?.classList.remove('is-open');
+    resumeModal?.setAttribute('aria-hidden', 'true');
+  });
+  resumeModal?.addEventListener('click', (e) => {
+    if (e.target === resumeModal || e.target?.classList?.contains('resume-modal-backdrop')) {
+      resumeModal?.classList.remove('is-open');
+      resumeModal?.setAttribute('aria-hidden', 'true');
+    }
+  });
 
   const constellationCanvas = document.getElementById('constellationCanvas');
   const constellationCursor = document.getElementById('constellationCursor');
@@ -1984,13 +2707,10 @@ const portfolioData = {
   });
 
   const parallax = (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 12;
-    const y = (e.clientY / window.innerHeight - 0.5) * 12;
-    if (heroCanvas) {
-      heroCanvas.style.transform = `translate(${x * 1.2}px, ${y * 1.2}px) scale(1.02)`;
-    }
+    const x = (e.clientX / window.innerWidth - 0.5) * 8;
+    const y = (e.clientY / window.innerHeight - 0.5) * 8;
     if (globeStage) {
-      globeStage.style.transform = `translate(${x}px, ${y}px)`;
+      globeStage.style.transform = `translate(${x * 0.7}px, ${y * 0.7}px)`;
     }
   };
 

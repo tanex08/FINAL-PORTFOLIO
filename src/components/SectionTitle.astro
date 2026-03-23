@@ -7,8 +7,8 @@ interface Props {
 const { title, subtitle } = Astro.props;
 ---
 
-<div class="text-center mb-16 animate-fadeInDown">
-  <h2 class="text-5xl font-bold uppercase tracking-widest mb-2 gradient-text-purple">
+<div class="text-center mb-16 animate-fadeInDown section-title">
+  <h2 class="text-5xl font-bold uppercase tracking-widest mb-2 gradient-text-purple" data-title={title}>
     {title}
   </h2>
   {subtitle && <p class="text-lg text-gray-400 mb-4">{subtitle}</p>}
@@ -21,6 +21,29 @@ const { title, subtitle } = Astro.props;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .section-title h2 {
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title h2::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #ffd0e6;
+    text-shadow: 0 0 18px rgba(255, 179, 106, 0.6);
+    animation: titleType 1.4s steps(20, end) forwards;
+  }
+
+  @keyframes titleType {
+    from { width: 0; }
+    to { width: 100%; }
   }
 
   @keyframes fadeInDown {
