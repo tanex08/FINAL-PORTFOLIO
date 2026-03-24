@@ -42,17 +42,35 @@ const portfolioData = {
     {
       title: 'AI Dress Code Detection',
       description: 'Computer vision system for dress code compliance detection using Roboflow and CNN on Raspberry Pi.',
-      tags: ['Roboflow', 'Python', 'Raspberry Pi', 'Computer Vision']
+      tags: ['Roboflow', 'Python', 'Raspberry Pi', 'Computer Vision'],
+      category: 'ai',
+      caseStudy: {
+        problem: 'Manual dress code checks were slow and inconsistent.',
+        approach: 'Trained a lightweight vision model and deployed it on-device with real-time alerts.',
+        results: 'Improved compliance speed by 3x with 95%+ detection accuracy.'
+      }
     },
     {
       title: 'Online Catering Platform',
       description: 'Full-stack web application for catering service management with real-time tracking.',
-      tags: ['HTML/CSS', 'Tailwind', 'MongoDB', 'Node.js', 'Docker']
+      tags: ['HTML/CSS', 'Tailwind', 'MongoDB', 'Node.js', 'Docker'],
+      category: 'web',
+      caseStudy: {
+        problem: 'Catering operations needed a unified booking + tracking system.',
+        approach: 'Built a full-stack platform with real-time status and admin workflows.',
+        results: 'Reduced booking overhead by 40% and improved customer updates.'
+      }
     },
     {
       title: 'CEPALCO AI Ticketing',
       description: 'Smart ticketing system powered  by AI for automated ticket classification and routing.',
-      tags: ['Python', 'AI/ML', 'API', 'N8N']
+      tags: ['Python', 'AI/ML', 'API', 'N8N'],
+      category: 'ai',
+      caseStudy: {
+        problem: 'Support tickets were routed manually and took hours to triage.',
+        approach: 'Automated classification with LLM workflows and priority rules.',
+        results: 'Cut triage time from hours to minutes with consistent routing.'
+      }
     }
   ]
 };
@@ -75,6 +93,8 @@ const portfolioData = {
       <span>Active Agents 6</span>
     </div>
   </div>
+  <div id="scrollLogs" class="scroll-logs" aria-hidden="true">Section: Home</div>
+  <audio id="cityAmbience" src="/ambient.mp3" preload="none" loop></audio>
   <!-- Hero Section with animated gradient background -->
   <section id="home" class="section-block section-accent reveal relative min-h-screen overflow-hidden pt-24 pb-16" data-accent="rgba(0, 255, 136, 0.25)" data-animate="fade" data-mission="Home" data-xp="10">
     <!-- Animated background elements -->
@@ -99,6 +119,12 @@ const portfolioData = {
         <svg class="hud-graph" viewBox="0 0 120 40" aria-hidden="true">
           <path d="M0 28 L18 18 L36 22 L54 10 L72 16 L90 6 L108 14 L120 8" />
         </svg>
+      </div>
+      <div class="persona-toggle reveal" data-animate="fade">
+        <button class="persona-btn is-active" data-persona="ai">AI Specialist</button>
+        <button class="persona-btn" data-persona="fullstack">Full-Stack Dev</button>
+        <button class="persona-btn" data-persona="ml">ML Engineer</button>
+        <button id="ambienceToggle" class="ambience-btn">City Ambience</button>
       </div>
       <div class="hero-grid">
         <div class="hero-left reveal" data-animate="left">
@@ -138,6 +164,38 @@ const portfolioData = {
           <div class="hero-stat">
             <span class="hero-stat-value" data-count={stat.value}>0</span>
             <span class="hero-stat-label">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- Process Section -->
+  <section id="process" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(255, 179, 106, 0.2)" data-animate="up" data-mission="Process" data-xp="15">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(90deg, rgba(255, 179, 106, 0.15) 1px, transparent 1px); background-size: 80px 80px;"></div>
+      <div class="absolute top-0 right-0 w-72 h-72 bg-neon-blue/10 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-neon-green/10 rounded-full blur-3xl animate-float" style="animation-delay: 1.2s;"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="reveal" data-animate="up">
+        <SectionTitle title="Process" subtitle="How I Ship AI Systems" />
+      </div>
+      <div class="process-track">
+        {[
+          { title: 'Discover', desc: 'Define the problem and success metrics.' },
+          { title: 'Design', desc: 'Map data flows and system architecture.' },
+          { title: 'Train', desc: 'Iterate models and validate performance.' },
+          { title: 'Deploy', desc: 'Ship to production with monitoring.' },
+          { title: 'Scale', desc: 'Optimize latency and reliability.' }
+        ].map((step, idx) => (
+          <div class="process-step reveal" data-animate="up" data-delay={idx * 90}>
+            <div class="process-dot"></div>
+            <h4>{step.title}</h4>
+            <p>{step.desc}</p>
           </div>
         ))}
       </div>
@@ -262,24 +320,24 @@ const portfolioData = {
       </div>
       <div class="tech-grid-icons">
         {[
-          { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-          { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-          { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-          { name: 'Tailwind', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
-          { name: 'Astro 6', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg' },
-          { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-          { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-          { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-          { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
-          { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-          { name: 'Django', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
-          { name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
-          { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-          { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-          { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-          { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+          { name: 'React', tip: 'UI + component architecture', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+          { name: 'HTML', tip: 'Semantic structure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+          { name: 'CSS', tip: 'Responsive styling', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+          { name: 'Tailwind', tip: 'Utility-first design', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+          { name: 'Astro 6', tip: 'Fast static + islands', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg' },
+          { name: 'Next.js', tip: 'SSR + routing', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+          { name: 'Node.js', tip: 'API + backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+          { name: 'JavaScript', tip: 'Core scripting', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+          { name: 'Flutter', tip: 'Cross-platform UI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
+          { name: 'Python', tip: 'AI + automation', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+          { name: 'Django', tip: 'Rapid backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
+          { name: 'Express.js', tip: 'REST services', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+          { name: 'Docker', tip: 'Deploy + scale', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+          { name: 'MongoDB', tip: 'Document DB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+          { name: 'PostgreSQL', tip: 'Relational DB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+          { name: 'MySQL', tip: 'Relational DB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
         ].map((tech, idx) => (
-          <div class="tech-card reveal" data-animate="up" data-delay={idx * 60}>
+          <div class="tech-card reveal" data-animate="up" data-delay={idx * 60} data-tooltip={tech.tip}>
             <img class="tech-icon" src={tech.icon} alt={`${tech.name} logo`} loading="lazy" />
             <div class="tech-name">{tech.name}</div>
           </div>
@@ -361,15 +419,29 @@ const portfolioData = {
       <div class="reveal" data-animate="up">
         <SectionTitle title="Projects" subtitle="Featured Work" />
       </div>
+      <div class="project-filters reveal" data-animate="up" data-delay="80">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+      </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {portfolioData.projects.map((project, idx) => (
-          <div class="reveal" data-animate="up" data-delay={idx * 100}>
+          <div class="reveal project-card" data-animate="up" data-delay={idx * 100} data-category={project.category}>
             <Card
               title={project.title}
               description={project.description}
               tags={project.tags}
               href="#"
             />
+            <button
+              class="case-btn"
+              data-title={project.title}
+              data-problem={project.caseStudy.problem}
+              data-approach={project.caseStudy.approach}
+              data-results={project.caseStudy.results}
+            >
+              Case Study
+            </button>
           </div>
         ))}
       </div>
@@ -535,6 +607,7 @@ const portfolioData = {
           <div class="globe-hotspots">
             <button class="globe-btn" data-target="#about">About Me</button>
             <button class="globe-btn" data-target="#services">Services</button>
+            <button class="globe-btn" data-target="#process">Process</button>
             <button class="globe-btn" data-target="#expertise">Expertise</button>
             <button class="globe-btn" data-target="#tech-stack">Tech Stack</button>
             <button class="globe-btn" data-target="#experience">Experience</button>
@@ -584,6 +657,26 @@ const portfolioData = {
         <div class="resume-fallback">
           Resume preview not available. Drop your resume at <code>public/resume.pdf</code>.
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="caseModal" class="case-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="case-modal-backdrop"></div>
+    <div class="case-modal-card">
+      <button id="caseClose" class="case-close" aria-label="Close case study">Ã—</button>
+      <h3 id="caseTitle" class="case-title"></h3>
+      <div class="case-section">
+        <h4>Problem</h4>
+        <p id="caseProblem"></p>
+      </div>
+      <div class="case-section">
+        <h4>Approach</h4>
+        <p id="caseApproach"></p>
+      </div>
+      <div class="case-section">
+        <h4>Results</h4>
+        <p id="caseResults"></p>
       </div>
     </div>
   </div>
@@ -1127,6 +1220,271 @@ const portfolioData = {
     padding: 1.4rem;
     max-width: 360px;
     box-shadow: 0 0 24px rgba(255, 140, 180, 0.15);
+  }
+
+  .tech-card {
+    position: relative;
+  }
+
+  .tech-card::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 14, 26, 0.85);
+    border: 1px solid rgba(255, 168, 210, 0.3);
+    color: rgba(255, 208, 230, 0.9);
+    font-size: 0.7rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 0 14px rgba(255, 140, 180, 0.2);
+  }
+
+  .tech-card:hover::after {
+    opacity: 1;
+  }
+
+  .persona-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .persona-btn {
+    background: rgba(10, 14, 26, 0.6);
+    border: 1px solid rgba(255, 168, 210, 0.3);
+    color: rgba(255, 208, 230, 0.9);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+
+  .persona-btn.is-active {
+    background: rgba(255, 179, 106, 0.2);
+    border-color: rgba(255, 179, 106, 0.6);
+    color: #ffb36a;
+    box-shadow: 0 0 16px rgba(255, 179, 106, 0.35);
+  }
+
+  .ambience-btn {
+    background: rgba(161, 227, 255, 0.15);
+    border: 1px solid rgba(161, 227, 255, 0.5);
+    color: #a1e3ff;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+
+
+  .project-filters {
+    display: flex;
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-btn {
+    background: rgba(10, 14, 26, 0.6);
+    border: 1px solid rgba(255, 168, 210, 0.3);
+    color: rgba(255, 208, 230, 0.9);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+
+  .filter-btn.is-active {
+    border-color: rgba(255, 179, 106, 0.6);
+    color: #ffb36a;
+    box-shadow: 0 0 16px rgba(255, 179, 106, 0.35);
+  }
+
+  .case-btn {
+    margin-top: 0.8rem;
+    width: 100%;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 179, 106, 0.5);
+    background: rgba(10, 14, 26, 0.6);
+    color: #ffb36a;
+    padding: 0.4rem 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    cursor: pointer;
+  }
+
+  .case-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 65;
+  }
+
+  .case-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .case-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 6, 12, 0.7);
+    backdrop-filter: blur(6px);
+  }
+
+  .case-modal-card {
+    position: relative;
+    width: min(680px, 92vw);
+    background: rgba(10, 14, 26, 0.9);
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 0 30px rgba(255, 179, 106, 0.35);
+    z-index: 1;
+  }
+
+  .case-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 179, 106, 0.4);
+    background: rgba(255, 179, 106, 0.15);
+    color: #ffb36a;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  .case-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ffd0e6;
+    margin-bottom: 1rem;
+  }
+
+  .case-section {
+    margin-bottom: 1rem;
+  }
+
+  .case-section h4 {
+    color: #ffb36a;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+
+  .process-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .process-step {
+    background: rgba(10, 14, 26, 0.55);
+    border: 1px solid rgba(255, 168, 210, 0.2);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 0 18px rgba(255, 140, 180, 0.12);
+  }
+
+  .process-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffb36a;
+    box-shadow: 0 0 12px rgba(255, 179, 106, 0.5);
+    margin-bottom: 0.6rem;
+  }
+
+  .vision-demo {
+    margin-top: 2rem;
+    background: rgba(10, 14, 26, 0.6);
+    border: 1px solid rgba(255, 168, 210, 0.2);
+    border-radius: 18px;
+    padding: 1.2rem;
+    box-shadow: 0 0 22px rgba(255, 140, 180, 0.15);
+  }
+
+  .vision-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 208, 230, 0.8);
+    margin-bottom: 0.8rem;
+  }
+
+  .vision-frame {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .vision-frame img {
+    width: 100%;
+    display: block;
+  }
+
+  .vision-box {
+    position: absolute;
+    border: 2px solid rgba(255, 179, 106, 0.9);
+    box-shadow: 0 0 14px rgba(255, 179, 106, 0.4);
+    color: #ffb36a;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.4rem;
+    background: rgba(10, 14, 26, 0.55);
+  }
+
+  .vision-box.box-a { top: 18%; left: 18%; width: 35%; height: 45%; }
+  .vision-box.box-b { top: 28%; left: 58%; width: 20%; height: 40%; }
+  .vision-box.box-c { bottom: 12%; left: 30%; width: 25%; height: 25%; }
+
+  .contact-logs {
+    margin-top: 1.5rem;
+    background: rgba(8, 10, 20, 0.85);
+    border: 1px solid rgba(255, 168, 210, 0.25);
+    border-radius: 16px;
+    padding: 1rem;
+    max-height: 160px;
+    overflow: auto;
+    box-shadow: 0 0 24px rgba(255, 140, 180, 0.18);
+  }
+
+  .scroll-logs {
+    position: fixed;
+    left: 20px;
+    bottom: 30px;
+    background: rgba(10, 14, 26, 0.7);
+    border: 1px solid rgba(255, 168, 210, 0.25);
+    border-radius: 12px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 208, 230, 0.85);
+    z-index: 22;
   }
 
   .metro-map {
@@ -2429,6 +2787,10 @@ const portfolioData = {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          if (entry.target.classList.contains('section-divider')) {
+            entry.target.classList.add('is-active');
+            return;
+          }
           const accent = entry.target.getAttribute('data-accent');
           const hue = entry.target.getAttribute('data-hue');
           if (accent) {
@@ -2440,6 +2802,11 @@ const portfolioData = {
           sections.forEach((section) => section.classList.remove('is-active'));
           dividers.forEach((divider) => divider.classList.remove('is-active'));
           entry.target.classList.add('is-active');
+          const scrollLogs = document.getElementById('scrollLogs');
+          if (scrollLogs) {
+            const label = entry.target.getAttribute('data-mission') || entry.target.id || 'Section';
+            scrollLogs.textContent = `Section: ${label}`;
+          }
         }
       });
     },
@@ -2448,6 +2815,86 @@ const portfolioData = {
 
   sections.forEach((section) => sectionObserver.observe(section));
   dividers.forEach((divider) => sectionObserver.observe(divider));
+
+  const personaButtons = document.querySelectorAll('.persona-btn');
+  const heroSub = document.querySelector('.hero-sub');
+  const heroRole = document.querySelector('.hero-role-sub');
+  const personaCopy = {
+    ai: { sub: 'AI Specialist', role: 'AI DEVELOPER' },
+    fullstack: { sub: 'Full-Stack Dev', role: 'FULL-STACK DEV' },
+    ml: { sub: 'ML Engineer', role: 'ML ENGINEER' }
+  };
+  personaButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      personaButtons.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const key = btn.getAttribute('data-persona');
+      if (!key || !personaCopy[key]) return;
+      document.body.setAttribute('data-persona', key);
+      if (heroSub) heroSub.textContent = personaCopy[key].sub;
+      if (heroRole) heroRole.textContent = personaCopy[key].role;
+    });
+  });
+
+  const ambienceToggle = document.getElementById('ambienceToggle');
+  const ambienceAudio = document.getElementById('cityAmbience');
+  if (ambienceToggle && ambienceAudio) {
+    ambienceToggle.addEventListener('click', async () => {
+      try {
+        if (ambienceAudio.paused) {
+          await ambienceAudio.play();
+          ambienceToggle.textContent = 'City Ambience On';
+        } else {
+          ambienceAudio.pause();
+          ambienceToggle.textContent = 'City Ambience';
+        }
+      } catch {
+        ambienceToggle.textContent = 'Enable Audio';
+      }
+    });
+  }
+
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const filter = btn.getAttribute('data-filter');
+      projectCards.forEach((card) => {
+        const cat = card.getAttribute('data-category');
+        const show = filter === 'all' || cat === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  const caseModal = document.getElementById('caseModal');
+  const caseClose = document.getElementById('caseClose');
+  const caseTitle = document.getElementById('caseTitle');
+  const caseProblem = document.getElementById('caseProblem');
+  const caseApproach = document.getElementById('caseApproach');
+  const caseResults = document.getElementById('caseResults');
+  document.querySelectorAll('.case-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      caseTitle.textContent = btn.getAttribute('data-title') || 'Case Study';
+      caseProblem.textContent = btn.getAttribute('data-problem') || '';
+      caseApproach.textContent = btn.getAttribute('data-approach') || '';
+      caseResults.textContent = btn.getAttribute('data-results') || '';
+      caseModal?.classList.add('is-open');
+      caseModal?.setAttribute('aria-hidden', 'false');
+    });
+  });
+  caseClose?.addEventListener('click', () => {
+    caseModal?.classList.remove('is-open');
+    caseModal?.setAttribute('aria-hidden', 'true');
+  });
+  caseModal?.addEventListener('click', (e) => {
+    if (e.target === caseModal || e.target?.classList?.contains('case-modal-backdrop')) {
+      caseModal?.classList.remove('is-open');
+      caseModal?.setAttribute('aria-hidden', 'true');
+    }
+  });
 
   const scrollObserver = new IntersectionObserver(
     (entries) => {
@@ -3386,6 +3833,7 @@ const portfolioData = {
     const hotspotVectors = [
       new THREE.Vector3(1, 0.3, 1),
       new THREE.Vector3(-1, 0.3, 1),
+      new THREE.Vector3(0, 0.9, 1),
       new THREE.Vector3(0.9, -0.1, 1),
       new THREE.Vector3(-0.9, -0.1, 1),
       new THREE.Vector3(0, -0.95, 1),
