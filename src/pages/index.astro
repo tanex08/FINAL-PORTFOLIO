@@ -323,7 +323,7 @@ const portfolioData = {
           { name: 'React', tip: 'UI + component architecture', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
           { name: 'HTML', tip: 'Semantic structure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
           { name: 'CSS', tip: 'Responsive styling', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-          { name: 'Tailwind', tip: 'Utility-first design', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+          { name: 'Tailwind', tip: 'Utility-first design', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
           { name: 'Astro 6', tip: 'Fast static + islands', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg' },
           { name: 'Next.js', tip: 'SSR + routing', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
           { name: 'Node.js', tip: 'API + backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
@@ -344,17 +344,6 @@ const portfolioData = {
         ))}
       </div>
 
-      <div class="tech-radar reveal" data-animate="up" data-delay="180">
-        <div class="radar-title">Stack Radar</div>
-        <svg viewBox="0 0 220 220" class="radar-svg">
-          <circle cx="110" cy="110" r="90" />
-          <circle cx="110" cy="110" r="60" />
-          <circle cx="110" cy="110" r="30" />
-          <line x1="110" y1="20" x2="110" y2="200" />
-          <line x1="20" y1="110" x2="200" y2="110" />
-          <polygon points="110,38 180,92 150,182 85,170 55,92" />
-        </svg>
-      </div>
     </div>
   </section>
 
@@ -808,29 +797,6 @@ const portfolioData = {
         </form>
       </div>
 
-      <div class="contact-console reveal" data-animate="up" data-delay="160">
-        <div class="console-header">
-          <span class="console-dot red"></span>
-          <span class="console-dot yellow"></span>
-          <span class="console-dot green"></span>
-          <span class="console-title">AI Console</span>
-        </div>
-        <div class="console-body">
-          <div class="console-line"><span class="console-prompt">›</span> open_channel --contact</div>
-          <div class="console-line"><span class="console-prompt">›</span> status: awaiting message</div>
-          <div class="console-line"><span class="console-prompt">›</span> route: email | discord</div>
-        </div>
-      </div>
-
-      <div class="contact-logs reveal" data-animate="up" data-delay="180">
-        <div class="console-header">
-          <span class="console-dot red"></span>
-          <span class="console-dot yellow"></span>
-          <span class="console-dot green"></span>
-          <span class="console-title">Inference Logs</span>
-        </div>
-        <div class="console-body" id="contactLogs"></div>
-      </div>
     </div>
   </section>
 
@@ -1212,16 +1178,6 @@ const portfolioData = {
   }
 
 
-  .tech-radar {
-    margin-top: 2.5rem;
-    background: rgba(10, 14, 26, 0.55);
-    border: 1px solid rgba(255, 168, 210, 0.2);
-    border-radius: 16px;
-    padding: 1.4rem;
-    max-width: 360px;
-    box-shadow: 0 0 24px rgba(255, 140, 180, 0.15);
-  }
-
   .tech-card {
     position: relative;
   }
@@ -1461,17 +1417,6 @@ const portfolioData = {
   .vision-box.box-b { top: 28%; left: 58%; width: 20%; height: 40%; }
   .vision-box.box-c { bottom: 12%; left: 30%; width: 25%; height: 25%; }
 
-  .contact-logs {
-    margin-top: 1.5rem;
-    background: rgba(8, 10, 20, 0.85);
-    border: 1px solid rgba(255, 168, 210, 0.25);
-    border-radius: 16px;
-    padding: 1rem;
-    max-height: 160px;
-    overflow: auto;
-    box-shadow: 0 0 24px rgba(255, 140, 180, 0.18);
-  }
-
   .scroll-logs {
     position: fixed;
     left: 20px;
@@ -1528,15 +1473,6 @@ const portfolioData = {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: rgba(255, 208, 230, 0.8);
-  }
-
-  .contact-console {
-    margin-top: 2rem;
-    background: rgba(8, 10, 20, 0.8);
-    border: 1px solid rgba(255, 168, 210, 0.25);
-    border-radius: 16px;
-    padding: 1rem 1.1rem;
-    box-shadow: 0 0 24px rgba(255, 140, 180, 0.18);
   }
 
   #projects .card-glass {
@@ -2974,30 +2910,6 @@ const portfolioData = {
       card.style.transform = 'rotateX(0deg) rotateY(0deg)';
     });
   });
-
-  const contactLogs = document.getElementById('contactLogs');
-  if (contactLogs) {
-    const logLines = [
-      '[AI] Channel open: inbound',
-      '[SYS] Monitoring active: latency 62ms',
-      '[AI] Routing to email + discord',
-      '[SYS] Awaiting user payload...'
-    ];
-    let logIndex = 0;
-    const pushLog = () => {
-      const line = document.createElement('div');
-      line.className = 'console-line';
-      line.innerHTML = `<span class="console-prompt">›</span> ${logLines[logIndex]}`;
-      contactLogs.appendChild(line);
-      contactLogs.scrollTop = contactLogs.scrollHeight;
-      logIndex = (logIndex + 1) % logLines.length;
-      if (contactLogs.childElementCount > 6) {
-        contactLogs.removeChild(contactLogs.firstChild);
-      }
-    };
-    pushLog();
-    setInterval(pushLog, 2000);
-  }
 
   const resumeFab = document.getElementById('resumeFab');
   const resumeModal = document.getElementById('resumeModal');
