@@ -5,92 +5,93 @@ import Card from '../components/Card.astro';
 
 const portfolioData = {
   about: {
-    intro: "I'm a passionate AI specialist and full-stack developer dedicated to building intelligent systems that solve real-world problems.",
-    bio: "Currently pursuing a Bachelor of Science in Information Technology at USTP, specializing in Web Development and IoT. My expertise spans machine learning, computer vision, and modern web technologies."
+    intro: "Hello! I'm Tristan Jay C. Gaid, a BSIT graduate from the University of Science and Technology of Southern Philippines.",
+    bio: "I'm currently seeking an entry-level Manual QA Tester or Software QA Engineer position. I specialize in Manual Testing, including Test Case Creation, Bug Reporting, Functional Testing, Cross-Browser Testing, Mobile Responsiveness Testing, and UI/Visual Testing. During my internship, I performed manual testing and quality validation to ensure application functionality and user experience. I am detail-oriented and passionate about delivering high-quality software by identifying defects and working closely with development teams to improve product reliability."
   },
   services: [
-    { icon: '🤖', title: 'AI Model Development', description: 'Custom ML models for classification, regression, and predictive analytics', tags: ['TensorFlow', 'PyTorch', 'Custom Models'] },
-    { icon: '👁️', title: 'Computer Vision', description: 'Object detection, image recognition, and real-time video analysis', tags: ['OpenCV', 'YOLO', 'CNN'] },
-    { icon: '💬', title: 'Chatbots & NLP', description: 'Intelligent conversational AI and natural language processing', tags: ['LLM', 'N8N', 'Ollama'] },
-    { icon: '🔗', title: 'Data Integration', description: 'ETL pipelines and seamless system orchestration', tags: ['REST API', 'GraphQL', 'Data Flow'] },
-    { icon: '📊', title: 'Data Annotation', description: 'High-quality dataset preparation and labeling', tags: ['Labeling', 'QA', 'Validation'] },
-    { icon: '🚀', title: 'MLOps & Deployment', description: 'Production-ready model deployment and scaling', tags: ['Docker', 'CI/CD', 'Monitoring'] }
+    { icon: '🧪', title: 'Manual Functional Testing', description: 'Executing manual test cases to verify application features work as expected across different scenarios.', tags: ['Test Execution', 'Functional Testing', 'User Scenarios'] },
+    { icon: '�', title: 'Test Case Creation', description: 'Designing clear, organized test cases based on requirements and user stories.', tags: ['Test Case Design', 'Test Planning', 'Documentation'] },
+    { icon: '🐛', title: 'Bug Reporting & Tracking', description: 'Documenting defects with detailed steps to reproduce and collaborating with developers for resolution.', tags: ['Bug Reports', 'Defect Tracking', 'Issue Documentation'] },
+    { icon: '🌐', title: 'Cross-Browser Testing', description: 'Testing web applications across multiple browsers to ensure consistent functionality and appearance.', tags: ['Chrome', 'Firefox', 'Edge', 'Safari'] },
+    { icon: '�', title: 'Mobile Responsiveness Testing', description: 'Verifying applications display and function correctly on different screen sizes and mobile devices.', tags: ['Responsive Design', 'Mobile Testing', 'Device Testing'] },
+    { icon: '🎨', title: 'Visual & UI Testing', description: 'Checking user interface elements, layouts, and visual consistency to ensure good user experience.', tags: ['UI Validation', 'Visual Testing', 'UX Testing'] }
   ],
   expertise: [
-    { title: 'Machine Learning', level: 95, skills: 'Neural Networks • Deep Learning • Model Optimization' },
-    { title: 'Computer Vision', level: 90, skills: 'CNN • Object Detection • Image Classification' },
-    { title: 'NLP & LLMs', level: 85, skills: 'Text Analysis • Language Models • Prompt Engineering' },
-    { title: 'Full-Stack Dev', level: 92, skills: 'Frontend • Backend • Databases • DevOps' }
+    { title: 'Manual Testing', level: 85, skills: 'Test Case Creation • Functional Testing • Regression Testing' },
+    { title: 'Bug Reporting', level: 85, skills: 'Detailed Documentation • Reproducible Steps • Issue Tracking' },
+    { title: 'Cross-Browser Testing', level: 80, skills: 'Chrome • Firefox • Edge • Safari' },
+    { title: 'UI/UX Testing', level: 80, skills: 'Visual Validation • Responsiveness • Usability' },
+    { title: 'AI Technologies', level: 60, skills: 'Chatbot Integration • Computer Vision • AI Model Development' }
   ],
   experience: [
     {
-      title: 'AI Developer',
+      title: 'Manual QA Tester Intern',
       company: 'CEPALCO',
       date: '2026 - Present',
-      description: 'Developing AI solutions for energy management using Ollama and N8N workflow automation.',
-      tags: ['Ollama', 'N8N', 'Llama3.2', 'Docker']
+      description: 'Performing manual testing and quality validation on applications to ensure functionality, usability, and user experience meet requirements. Also contributed to AI chatbot integration work.',
+      tags: ['Manual Testing', 'Bug Reporting', 'Functional Testing', 'Quality Validation']
     },
     {
       title: 'Data Annotator',
       company: 'Remotasks',
       date: '2022 - 2024',
-      description: 'Performed data annotation for NLP and computer vision projects.',
-      tags: ['NER', 'Sentiment Analysis', 'Data Labeling']
+      description: 'Performed data annotation and quality validation, ensuring accuracy and consistency in project deliverables.',
+      tags: ['Data Validation', 'Quality Control', 'Attention to Detail']
     }
   ],
   projects: [
     {
-      title: 'AI Dress Code Detection',
-      description: 'Computer vision system for dress code compliance detection using Roboflow and CNN on Raspberry Pi.',
-      tags: ['Roboflow', 'Python', 'Raspberry Pi', 'Computer Vision'],
-      category: 'ai',
+      title: 'Web Application Manual Testing',
+      description: 'Performed comprehensive manual testing on a catering management web application, including functional testing, cross-browser testing, and mobile responsiveness validation.',
+      tags: ['Manual Testing', 'Cross-Browser', 'Responsive Testing', 'Bug Reporting'],
+      category: 'qa',
       caseStudy: {
-        problem: 'Manual dress code checks were slow and inconsistent.',
-        approach: 'Trained a lightweight vision model and deployed it on-device with real-time alerts.',
-        results: 'Improved compliance speed by 3x with 95%+ detection accuracy.'
+        problem: 'The catering platform needed thorough manual testing to ensure functionality across different browsers and devices.',
+        approach: 'Created detailed test cases, performed functional testing, tested on multiple browsers (Chrome, Firefox, Edge), validated mobile responsiveness, and documented all defects with clear reproduction steps.',
+        results: 'Identified and reported 18+ bugs including UI issues, functional defects, and responsiveness problems. Helped ensure smooth user experience across all platforms.'
       }
     },
     {
-      title: 'Online Catering Platform',
-      description: 'Full-stack web application for catering service management with real-time tracking.',
-      tags: ['HTML/CSS', 'Tailwind', 'MongoDB', 'Node.js', 'Docker'],
-      category: 'web',
+      title: 'Desktop Application Testing',
+      description: 'Conducted manual functional testing and UI validation for a dress code detection system, verifying accuracy and reporting defects.',
+      tags: ['Functional Testing', 'UI Testing', 'System Validation', 'Bug Reporting'],
+      category: 'qa',
       caseStudy: {
-        problem: 'Catering operations needed a unified booking + tracking system.',
-        approach: 'Built a full-stack platform with real-time status and admin workflows.',
-        results: 'Reduced booking overhead by 40% and improved customer updates.'
+        problem: 'The system required extensive manual testing to verify detection accuracy and ensure reliable operation.',
+        approach: 'Designed test scenarios, executed manual test cases, validated system behavior under different conditions, documented defects with screenshots, and verified bug fixes.',
+        results: 'Identified 15+ defects including false positives, UI inconsistencies, and functional issues. Testing helped improve system reliability and accuracy.'
       }
     },
     {
-      title: 'CEPALCO AI Ticketing',
-      description: 'Smart ticketing system powered  by AI for automated ticket classification and routing.',
-      tags: ['Python', 'AI/ML', 'API', 'N8N'],
-      category: 'ai',
+      title: 'Ticketing System QA Testing',
+      description: 'Performed manual testing on a ticketing management application, focusing on functional testing, user workflows, and bug documentation.',
+      tags: ['Manual Testing', 'Functional Testing', 'User Testing', 'Bug Reporting'],
+      category: 'qa',
       caseStudy: {
-        problem: 'Support tickets were routed manually and took hours to triage.',
-        approach: 'Automated classification with LLM workflows and priority rules.',
-        results: 'Cut triage time from hours to minutes with consistent routing.'
+        problem: 'The ticketing system needed thorough quality validation before deployment to ensure all features worked correctly.',
+        approach: 'Created comprehensive test cases covering all user workflows, performed manual functional testing, validated user interface elements, tested edge cases, and documented defects clearly.',
+        results: 'Successfully identified 12+ functional and UI issues. Contributed to improving system quality and user experience before release.'
       }
     }
   ]
 };
 ---
 
-<Layout title="Tristan Jay - AI Specialist Portfolio">
+<Layout title="Tristan Jay Gaid - Manual QA Tester Portfolio">
   <canvas id="constellationCanvas" class="constellation-canvas" aria-hidden="true"></canvas>
   <div id="constellationCursor" class="constellation-cursor" aria-hidden="true"></div>
   <div class="system-ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>Uptime 99.98%</span>
-      <span>Deployments 128</span>
-      <span>Model v2.4</span>
-      <span>Latency 62ms</span>
-      <span>Active Agents 6</span>
-      <span>Uptime 99.98%</span>
-      <span>Deployments 128</span>
-      <span>Model v2.4</span>
-      <span>Latency 62ms</span>
-      <span>Active Agents 6</span>
+      <span>Test Coverage 92%</span>
+      <span>Bugs Fixed 37</span>
+      <span>QA v1.0</span>
+      <span>Test Cycles 15</span>
+      <span>Quality Score 98%</span>
+      <span>Test Coverage 92%</span>
+      <span>Bugs Fixed 37</span>
+      <span>QA v1.0</span>
+      <span>Test Cycles 15</span>
+      <span>Quality Score 98%</span>
     </div>
   </div>
   <div id="scrollLogs" class="scroll-logs" aria-hidden="true">Section: Home</div>
@@ -113,25 +114,25 @@ const portfolioData = {
 
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <div class="hero-hud reveal" data-animate="fade" aria-hidden="true">
-        <div class="hud-chip">Model: Online</div>
-        <div class="hud-chip">Latency: 62ms</div>
-        <div class="hud-chip">Build: Stable</div>
+        <div class="hud-chip">QA: Active</div>
+        <div class="hud-chip">Tests: 92% Pass</div>
+        <div class="hud-chip">Quality: High</div>
         <svg class="hud-graph" viewBox="0 0 120 40" aria-hidden="true">
           <path d="M0 28 L18 18 L36 22 L54 10 L72 16 L90 6 L108 14 L120 8" />
         </svg>
       </div>
       <div class="persona-toggle reveal" data-animate="fade">
-        <button class="persona-btn is-active" data-persona="ai">AI Specialist</button>
-        <button class="persona-btn" data-persona="fullstack">Full-Stack Dev</button>
-        <button class="persona-btn" data-persona="ml">ML Engineer</button>
+        <button class="persona-btn is-active" data-persona="qa">Manual QA Tester</button>
+        <button class="persona-btn" data-persona="tester">QA Engineer</button>
+        <button class="persona-btn" data-persona="functional">Functional Tester</button>
         <button id="ambienceToggle" class="ambience-btn">City Ambience</button>
       </div>
       <div class="hero-grid">
         <div class="hero-left reveal" data-animate="left">
           <p class="hero-kicker">Hello! I'm</p>
-          <h3 class="hero-name">TANEX</h3>
-          <p class="hero-sub">AI Specialist</p>
-          <div class="hero-badge">AI VERIFIED</div>
+          <h3 class="hero-name">TRISTAN</h3>
+          <p class="hero-sub">Manual QA Tester</p>
+          <div class="hero-badge">QA CERTIFIED</div>
         </div>
 
         <div class="hero-center reveal" data-animate="up">
@@ -144,11 +145,11 @@ const portfolioData = {
 
         <div class="hero-right reveal" data-animate="right">
           <p class="hero-role-top">An</p>
-          <h2 class="hero-role-sub">AI DEVELOPER</h2>
+          <h2 class="hero-role-sub">ENTRY-LEVEL MANUAL QA TESTER</h2>
           <div class="hero-output">
-            <div class="output-title">Model Output</div>
+            <div class="output-title">Test Execution Status</div>
             <div class="output-bar"><span style="width: 86%"></span></div>
-            <div class="output-meta">Confidence 0.86 · Session Active</div>
+            <div class="output-meta">Test Coverage 86% · Session Active</div>
             <div class="output-stream" id="outputStream" aria-live="polite"></div>
           </div>
         </div>
@@ -156,10 +157,10 @@ const portfolioData = {
 
       <div class="hero-stats reveal" data-animate="up" data-delay="120">
         {[
-          { label: 'AI Models Built', value: 1 },
-          { label: 'Full-Stack Projects', value: 4 },
-          { label: 'Years Building', value: 1 },
-          { label: 'Clients Served', value: 0 }
+          { label: 'Test Cases Created', value: 45 },
+          { label: 'Bugs Identified', value: 45 },
+          { label: 'Projects Tested', value: 3 },
+          { label: 'Browsers Tested', value: 4 }
         ].map((stat) => (
           <div class="hero-stat">
             <span class="hero-stat-value" data-count={stat.value}>0</span>
@@ -182,15 +183,15 @@ const portfolioData = {
 
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <div class="reveal" data-animate="up">
-        <SectionTitle title="Process" subtitle="How I Ship AI Systems" />
+        <SectionTitle title="Process" subtitle="How I Approach Manual Testing" />
       </div>
       <div class="process-track">
         {[
-          { title: 'Discover', desc: 'Define the problem and success metrics.' },
-          { title: 'Design', desc: 'Map data flows and system architecture.' },
-          { title: 'Train', desc: 'Iterate models and validate performance.' },
-          { title: 'Deploy', desc: 'Ship to production with monitoring.' },
-          { title: 'Scale', desc: 'Optimize latency and reliability.' }
+          { title: 'Understand', desc: 'Review requirements and user stories to understand expected behavior.' },
+          { title: 'Plan', desc: 'Create detailed test cases covering all scenarios and edge cases.' },
+          { title: 'Execute', desc: 'Manually test features across browsers and devices.' },
+          { title: 'Report', desc: 'Document bugs with clear steps, screenshots, and priority.' },
+          { title: 'Verify', desc: 'Retest fixed issues and perform regression testing.' }
         ].map((step, idx) => (
           <div class="process-step reveal" data-animate="up" data-delay={idx * 90}>
             <div class="process-dot"></div>
@@ -220,16 +221,16 @@ const portfolioData = {
       
       <div class="grid lg:grid-cols-2 gap-12">
         <div class="reveal" data-animate="left">
-          <h3 class="text-3xl font-bold text-neon-green mb-4">Passionate About Innovation</h3>
+          <h3 class="text-3xl font-bold text-neon-green mb-4">Passionate About Software Quality</h3>
           <p class="text-gray-300 leading-relaxed mb-4">{portfolioData.about.intro}</p>
           <p class="text-gray-400 leading-relaxed">{portfolioData.about.bio}</p>
         </div>
 
         <div class="grid grid-cols-1 gap-4 reveal" data-animate="right">
           {[
-            { icon: '⚙️', title: 'Technologies', desc: 'Python, JavaScript, React, Docker, TensorFlow' },
-            { icon: '🎯', title: 'Specialization', desc: 'Machine Learning, Computer Vision, AI Development' },
-            { icon: '🚀', title: 'Focus', desc: 'Building scalable, intelligent solutions' }
+            { icon: '⚙️', title: 'Specialization', desc: 'Manual Testing, Bug Reporting, Functional Testing, Cross-Browser Testing' },
+            { icon: '🎯', title: 'Testing Types', desc: 'Functional Testing • UI/Visual Testing • Mobile Responsiveness • Regression Testing' },
+            { icon: '🚀', title: 'Focus', desc: 'Ensuring software quality through thorough manual testing and detailed defect documentation' }
           ].map((skill) => (
             <div class="p-5 bg-dark-secondary/40 backdrop-blur-lg border border-neon-green/20 rounded-xl hover:border-neon-green/50 hover:bg-dark-secondary/60 transition-all group">
               <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">{skill.icon}</div>
@@ -306,6 +307,97 @@ const portfolioData = {
 
   <div class="section-divider" aria-hidden="true"></div>
 
+  <!-- AI Background Section -->
+  <section id="ai-background" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(138, 43, 226, 0.18)" data-animate="up" data-mission="AI Background" data-xp="10">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 opacity-15" style="background-image: radial-gradient(circle, rgba(138, 43, 226, 0.12) 1px, transparent 1px); background-size: 60px 60px;"></div>
+      <div class="absolute top-1/2 left-1/3 w-80 h-80 bg-neon-purple/10 rounded-full blur-3xl animate-float" style="animation-delay: 0.5s;"></div>
+      <div class="absolute bottom-10 right-1/4 w-72 h-72 bg-neon-blue/10 rounded-full blur-3xl animate-float" style="animation-delay: 1.5s;"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 relative z-10">
+      <div class="reveal" data-animate="up">
+        <SectionTitle title="Additional Technical Experience" subtitle="AI & Computer Vision Background" />
+      </div>
+      
+      <div class="card-glass max-w-3xl mx-auto reveal" data-animate="up" data-delay="120">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-4xl">🤖</div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-neon-purple mb-3">AI & Computer Vision Experience</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              Beyond my primary focus on Manual QA Testing, I have hands-on experience with AI technologies from two different projects during my academic journey.
+            </p>
+            
+            <!-- AI Chatbot Integration -->
+            <div class="mb-6">
+              <h4 class="text-lg font-semibold text-neon-green mb-3 flex items-center gap-2">
+                <span>💬</span> AI Chatbot Integration - CEPALCO Internship
+              </h4>
+              <p class="text-gray-300 leading-relaxed mb-3 text-sm">
+                During my internship at CEPALCO, I worked on integrating, configuring, and validating AI chatbot functionality within a web-based ticketing management application.
+              </p>
+              <div class="grid md:grid-cols-2 gap-3">
+                <div class="bg-dark-secondary/30 rounded-lg p-3 border border-neon-green/20">
+                  <h5 class="text-xs font-semibold text-neon-green mb-2">Integration Work</h5>
+                  <ul class="text-xs text-gray-400 space-y-1">
+                    <li>• Connected chatbot API to web application</li>
+                    <li>• Configured chatbot response flows</li>
+                    <li>• Integrated with existing ticketing system</li>
+                  </ul>
+                </div>
+                <div class="bg-dark-secondary/30 rounded-lg p-3 border border-neon-green/20">
+                  <h5 class="text-xs font-semibold text-neon-green mb-2">Testing & Validation</h5>
+                  <ul class="text-xs text-gray-400 space-y-1">
+                    <li>• Tested chatbot responses and accuracy</li>
+                    <li>• Validated integration functionality</li>
+                    <li>• Documented configuration issues</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Computer Vision Thesis -->
+            <div class="mb-4">
+              <h4 class="text-lg font-semibold text-neon-blue mb-3 flex items-center gap-2">
+                <span>👁️</span> Computer Vision AI Developer - Thesis Project
+              </h4>
+              <p class="text-gray-300 leading-relaxed mb-3 text-sm">
+                Served as the Computer Vision AI Developer for my undergraduate thesis project, focusing on developing an AI-powered dress code detection system.
+              </p>
+              <div class="grid md:grid-cols-2 gap-3">
+                <div class="bg-dark-secondary/30 rounded-lg p-3 border border-neon-blue/20">
+                  <h5 class="text-xs font-semibold text-neon-blue mb-2">Development Work</h5>
+                  <ul class="text-xs text-gray-400 space-y-1">
+                    <li>• Developed computer vision detection model</li>
+                    <li>• Trained AI model for dress code classification</li>
+                    <li>• Implemented on Raspberry Pi hardware</li>
+                  </ul>
+                </div>
+                <div class="bg-dark-secondary/30 rounded-lg p-3 border border-neon-blue/20">
+                  <h5 class="text-xs font-semibold text-neon-blue mb-2">Technical Skills Used</h5>
+                  <ul class="text-xs text-gray-400 space-y-1">
+                    <li>• Computer vision algorithms</li>
+                    <li>• AI model training and optimization</li>
+                    <li>• Real-time detection systems</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 p-3 bg-neon-purple/10 border border-neon-purple/30 rounded-lg">
+              <p class="text-xs text-gray-400">
+                <strong class="text-neon-purple">Note:</strong> These AI experiences provided me with valuable technical exposure to AI technologies and integration work, which complements my primary focus and expertise in manual QA testing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
   <!-- Tech Stack Section -->
   <section id="tech-stack" class="section-block section-accent reveal relative py-24 overflow-hidden locked-section" data-accent="rgba(0, 150, 255, 0.18)" data-animate="up">
     <div class="absolute inset-0 -z-10">
@@ -316,32 +408,40 @@ const portfolioData = {
 
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <div class="reveal" data-animate="up">
-        <SectionTitle title="Tech Stack" subtitle="Tools I Build With" />
+        <SectionTitle title="Tools & Technologies" subtitle="What I Use for Testing & Development" />
       </div>
       <div class="tech-grid-icons">
         {[
-          { name: 'React', tip: 'UI + component architecture', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-          { name: 'HTML', tip: 'Semantic structure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-          { name: 'CSS', tip: 'Responsive styling', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-          { name: 'Tailwind', tip: 'Utility-first design', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-          { name: 'Astro 6', tip: 'Fast static + islands', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg' },
-          { name: 'Next.js', tip: 'SSR + routing', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-          { name: 'Node.js', tip: 'API + backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-          { name: 'JavaScript', tip: 'Core scripting', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-          { name: 'Flutter', tip: 'Cross-platform UI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
-          { name: 'Python', tip: 'AI + automation', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-          { name: 'Django', tip: 'Rapid backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
-          { name: 'Express.js', tip: 'REST services', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
-          { name: 'Docker', tip: 'Deploy + scale', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-          { name: 'MongoDB', tip: 'Document DB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-          { name: 'PostgreSQL', tip: 'Relational DB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-          { name: 'MySQL', tip: 'Relational DB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+          { name: 'Chrome', tip: 'Primary browser for testing', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg' },
+          { name: 'Firefox', tip: 'Cross-browser testing', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg' },
+          { name: 'HTML', tip: 'Understanding web structure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+          { name: 'CSS', tip: 'UI and visual testing', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+          { name: 'Git', tip: 'Version control basics', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+          { name: 'GitHub', tip: 'Issue tracking', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+          { name: 'Python', tip: 'AI development & scripting', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+          { name: 'OpenCV', tip: 'Computer vision development', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
+          { name: 'MongoDB', tip: 'NoSQL database experience', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+          { name: 'PostgreSQL', tip: 'Relational database experience', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
         ].map((tech, idx) => (
           <div class="tech-card reveal" data-animate="up" data-delay={idx * 60} data-tooltip={tech.tip}>
             <img class="tech-icon" src={tech.icon} alt={`${tech.name} logo`} loading="lazy" />
             <div class="tech-name">{tech.name}</div>
           </div>
         ))}
+      </div>
+
+      <!-- Additional AI/Development Tools -->
+      <div class="mt-8 reveal" data-animate="up" data-delay="120">
+        <h3 class="text-lg font-semibold text-neon-purple mb-4 text-center">AI & Integration Tools</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <div class="px-4 py-2 bg-dark-secondary/40 border border-neon-purple/30 rounded-lg text-sm text-gray-300 hover:border-neon-purple/60 transition-colors">
+            <span class="font-semibold text-neon-purple">Ollama</span> - Local LLM deployment
+          </div>
+          <div class="px-4 py-2 bg-dark-secondary/40 border border-neon-purple/30 rounded-lg text-sm text-gray-300 hover:border-neon-purple/60 transition-colors">
+            <span class="font-semibold text-neon-purple">n8n</span> - Workflow automation
+          </div>
+        </div>
+        <p class="text-xs text-gray-500 text-center mt-3">Used in AI chatbot integration and thesis projects</p>
       </div>
 
     </div>
@@ -410,8 +510,8 @@ const portfolioData = {
       </div>
       <div class="project-filters reveal" data-animate="up" data-delay="80">
         <button class="filter-btn is-active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="ai">AI</button>
-        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="qa">Manual Testing</button>
+        <button class="filter-btn" data-filter="functional">Functional Testing</button>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {portfolioData.projects.map((project, idx) => (
@@ -436,23 +536,23 @@ const portfolioData = {
       </div>
 
       <div class="vision-demo reveal" data-animate="up" data-delay="120">
-        <div class="vision-title">Vision Model Demo</div>
+        <div class="vision-title">QA Testing Dashboard</div>
         <div class="vision-frame">
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1100&q=80" alt="Vision demo" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1100&q=80" alt="QA Testing Dashboard" loading="lazy" />
           <div class="vision-box box-a">
-            <span>Face 0.96</span>
+            <span>Tests Passed 92%</span>
           </div>
           <div class="vision-box box-b">
-            <span>Jacket 0.88</span>
+            <span>Bugs Found 15</span>
           </div>
           <div class="vision-box box-c">
-            <span>Background 0.82</span>
+            <span>Coverage 88%</span>
           </div>
         </div>
       </div>
 
       <div class="metro-map reveal" data-animate="up" data-delay="140">
-        <div class="metro-title">Project Metro Map</div>
+        <div class="metro-title">Manual Testing Process Map</div>
         <svg viewBox="0 0 620 180" class="metro-svg" aria-hidden="true">
           <path d="M30 90 L160 90 L220 40 L320 40 L380 90 L500 90 L580 140" />
           <circle cx="30" cy="90" r="8" />
@@ -464,13 +564,13 @@ const portfolioData = {
           <circle cx="580" cy="140" r="8" />
         </svg>
         <div class="metro-labels">
-          <span>Dress Code AI</span>
-          <span>Catering Platform</span>
-          <span>AI Ticketing</span>
-          <span>Vision Suite</span>
-          <span>Automation</span>
-          <span>IoT Lab</span>
-          <span>Deploy</span>
+          <span>Requirements</span>
+          <span>Test Cases</span>
+          <span>Execution</span>
+          <span>Bug Report</span>
+          <span>Retest</span>
+          <span>Regression</span>
+          <span>Sign-Off</span>
         </div>
       </div>
     </div>
@@ -491,7 +591,7 @@ const portfolioData = {
       <div class="card-glass max-w-2xl mx-auto reveal" data-animate="up" data-delay="120">
         <h3 class="text-2xl font-bold text-neon-green mb-2">Bachelor of Science in Information Technology</h3>
         <p class="text-gray-300 mb-2">University of Science and Technology of Southern Philippines (USTP)</p>
-        <p class="text-sm text-neon-blue font-semibold mb-4">Expected: 2026</p>
+        <p class="text-sm text-neon-blue font-semibold mb-4">Graduated: 2026</p>
         <p class="text-gray-400">Specialization in Web Development and Internet of Things</p>
       </div>
     </div>
@@ -598,6 +698,7 @@ const portfolioData = {
             <button class="globe-btn" data-target="#services">Services</button>
             <button class="globe-btn" data-target="#process">Process</button>
             <button class="globe-btn" data-target="#expertise">Expertise</button>
+            <button class="globe-btn" data-target="#ai-background">AI Background</button>
             <button class="globe-btn" data-target="#tech-stack">Tech Stack</button>
             <button class="globe-btn" data-target="#experience">Experience</button>
             <button class="globe-btn" data-target="#projects">Projects</button>
@@ -675,8 +776,8 @@ const portfolioData = {
     <div class="chat-modal-card">
       <button id="chatClose" class="chat-close" aria-label="Close chat">Ã—</button>
       <div class="chat-header">
-        <div class="chat-title">Tristan AI Assistant</div>
-        <div class="chat-sub">Ask about projects, skills, or availability.</div>
+        <div class="chat-title">Tristan's QA Assistant</div>
+        <div class="chat-sub">Ask about manual testing experience, skills, or availability.</div>
       </div>
       <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
       <form id="chatForm" class="chat-input">
@@ -2756,9 +2857,9 @@ const portfolioData = {
   const heroSub = document.querySelector('.hero-sub');
   const heroRole = document.querySelector('.hero-role-sub');
   const personaCopy = {
-    ai: { sub: 'AI Specialist', role: 'AI DEVELOPER' },
-    fullstack: { sub: 'Full-Stack Dev', role: 'FULL-STACK DEV' },
-    ml: { sub: 'ML Engineer', role: 'ML ENGINEER' }
+    qa: { sub: 'Manual QA Tester', role: 'ENTRY-LEVEL MANUAL QA TESTER' },
+    tester: { sub: 'QA Engineer', role: 'SOFTWARE QA ENGINEER' },
+    functional: { sub: 'Functional Tester', role: 'FUNCTIONAL TESTER' }
   };
   personaButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -2872,10 +2973,10 @@ const portfolioData = {
   const outputStream = document.getElementById('outputStream');
   if (outputStream) {
     const streamLines = [
-      'Inference: vision-core online...',
-      'Routing: build pipeline stable...',
-      'Signal: latency 62ms, uptime 99.9%...',
-      'Deploy: release candidate green...'
+      'Test execution: functional tests passed...',
+      'Bug report: 3 UI issues documented...',
+      'Cross-browser: testing on Chrome, Firefox...',
+      'Validation: mobile responsiveness verified...'
     ];
     let lineIndex = 0;
     let charIndex = 0;
@@ -3353,6 +3454,169 @@ const portfolioData = {
     requestAnimationFrame(loop);
   }
 
+  // Main game section (not modal) - duplicate game logic
+  const canvasMain = document.getElementById('gameCanvas');
+  if (canvasMain) {
+    const ctxMain = canvasMain.getContext('2d');
+    const scoreElMain = document.getElementById('gameScore');
+    const bestElMain = document.getElementById('gameBest');
+    const livesElMain = document.getElementById('gameLives');
+    const startBtnMain = document.getElementById('startGameBtn');
+    const pauseBtnMain = document.getElementById('pauseGameBtn');
+    const resetBtnMain = document.getElementById('resetGameBtn');
+
+    const WIDTHMain = 900;
+    const HEIGHTMain = 520;
+    const dprMain = window.devicePixelRatio || 1;
+    canvasMain.width = WIDTHMain * dprMain;
+    canvasMain.height = HEIGHTMain * dprMain;
+    ctxMain.scale(dprMain, dprMain);
+
+    const stateMain = {
+      player: { x: WIDTHMain / 2, y: HEIGHTMain - 60, vx: 0, vy: 0, w: 30, h: 30 },
+      enemies: [],
+      particles: [],
+      score: 0,
+      best: parseInt(localStorage.getItem('bestScore') || '0', 10),
+      lives: 3,
+      running: false,
+      paused: false,
+      speedBoost: false,
+      pointerActive: false,
+      pointerX: 0,
+      pointerY: 0
+    };
+    const keysMain = new Set();
+
+    const startGameMain = () => {
+      if (!stateMain.running) {
+        stateMain.running = true;
+        stateMain.paused = false;
+        stateMain.score = 0;
+        stateMain.lives = 3;
+        stateMain.enemies = [];
+        stateMain.particles = [];
+        stateMain.player.x = WIDTHMain / 2;
+        stateMain.player.y = HEIGHTMain - 60;
+      }
+    };
+
+    const togglePauseMain = () => {
+      if (stateMain.running) stateMain.paused = !stateMain.paused;
+    };
+
+    const stopGameMain = () => {
+      stateMain.running = false;
+      stateMain.paused = false;
+      stateMain.enemies = [];
+      stateMain.particles = [];
+      stateMain.score = 0;
+      stateMain.lives = 3;
+    };
+
+    const loopMain = () => {
+      if (!ctxMain) return;
+      ctxMain.clearRect(0, 0, WIDTHMain, HEIGHTMain);
+      ctxMain.fillStyle = 'rgba(10, 14, 26, 0.9)';
+      ctxMain.fillRect(0, 0, WIDTHMain, HEIGHTMain);
+
+      if (scoreElMain) scoreElMain.textContent = stateMain.score;
+      if (bestElMain) bestElMain.textContent = stateMain.best;
+      if (livesElMain) livesElMain.textContent = stateMain.lives;
+
+      if (!stateMain.running || stateMain.paused) {
+        requestAnimationFrame(loopMain);
+        return;
+      }
+
+      const speed = stateMain.speedBoost ? 10 : 6;
+      if (keysMain.has('arrowleft') || keysMain.has('a')) stateMain.player.vx = -speed;
+      else if (keysMain.has('arrowright') || keysMain.has('d')) stateMain.player.vx = speed;
+      else stateMain.player.vx = 0;
+
+      if (keysMain.has('arrowup') || keysMain.has('w')) stateMain.player.vy = -speed;
+      else if (keysMain.has('arrowdown') || keysMain.has('s')) stateMain.player.vy = speed;
+      else stateMain.player.vy = 0;
+
+      if (stateMain.pointerActive) {
+        stateMain.player.vx = (stateMain.pointerX - stateMain.player.x) * 0.15;
+        stateMain.player.vy = (stateMain.pointerY - stateMain.player.y) * 0.15;
+      }
+
+      stateMain.player.x += stateMain.player.vx;
+      stateMain.player.y += stateMain.player.vy;
+      stateMain.player.x = Math.max(stateMain.player.w, Math.min(WIDTHMain - stateMain.player.w, stateMain.player.x));
+      stateMain.player.y = Math.max(stateMain.player.h, Math.min(HEIGHTMain - stateMain.player.h, stateMain.player.y));
+
+      if (Math.random() < 0.02) {
+        stateMain.enemies.push({
+          x: Math.random() * WIDTHMain,
+          y: -20,
+          w: 25,
+          h: 25,
+          vy: 2 + Math.random() * 2
+        });
+      }
+
+      stateMain.enemies.forEach((e, i) => {
+        e.y += e.vy;
+        ctxMain.fillStyle = '#ff4444';
+        ctxMain.fillRect(e.x - e.w / 2, e.y - e.h / 2, e.w, e.h);
+        if (e.y > HEIGHTMain + 30) stateMain.enemies.splice(i, 1);
+        const dx = stateMain.player.x - e.x;
+        const dy = stateMain.player.y - e.y;
+        if (Math.abs(dx) < (stateMain.player.w + e.w) / 2 && Math.abs(dy) < (stateMain.player.h + e.h) / 2) {
+          stateMain.lives -= 1;
+          stateMain.enemies.splice(i, 1);
+          if (stateMain.lives <= 0) {
+            stateMain.running = false;
+            if (stateMain.score > stateMain.best) {
+              stateMain.best = stateMain.score;
+              localStorage.setItem('bestScore', stateMain.best);
+            }
+          }
+        }
+      });
+
+      stateMain.score += 1;
+      ctxMain.fillStyle = '#00ff88';
+      ctxMain.fillRect(stateMain.player.x - stateMain.player.w / 2, stateMain.player.y - stateMain.player.h / 2, stateMain.player.w, stateMain.player.h);
+      requestAnimationFrame(loopMain);
+    };
+
+    startBtnMain?.addEventListener('click', startGameMain);
+    pauseBtnMain?.addEventListener('click', togglePauseMain);
+    resetBtnMain?.addEventListener('click', stopGameMain);
+
+    window.addEventListener('keydown', (e) => {
+      keysMain.add(e.key.toLowerCase());
+    });
+
+    window.addEventListener('keyup', (e) => {
+      keysMain.delete(e.key.toLowerCase());
+    });
+
+    canvasMain.addEventListener('pointerdown', (e) => {
+      stateMain.pointerActive = true;
+      const rect = canvasMain.getBoundingClientRect();
+      stateMain.pointerX = ((e.clientX - rect.left) / rect.width) * WIDTHMain;
+      stateMain.pointerY = ((e.clientY - rect.top) / rect.height) * HEIGHTMain;
+    });
+
+    canvasMain.addEventListener('pointermove', (e) => {
+      if (!stateMain.pointerActive) return;
+      const rect = canvasMain.getBoundingClientRect();
+      stateMain.pointerX = ((e.clientX - rect.left) / rect.width) * WIDTHMain;
+      stateMain.pointerY = ((e.clientY - rect.top) / rect.height) * HEIGHTMain;
+    });
+
+    window.addEventListener('pointerup', () => {
+      stateMain.pointerActive = false;
+    });
+
+    requestAnimationFrame(loopMain);
+  }
+
   const chatFab = document.getElementById('chatFab');
   const chatModal = document.getElementById('chatModal');
   const chatClose = document.getElementById('chatClose');
@@ -3391,18 +3655,21 @@ const portfolioData = {
   const pickFallbackReply = (message) => {
     const msg = message.toLowerCase();
     if (msg.includes('project')) {
-      return "I build AI + full-stack projects like CV systems, ticketing automation, and smart web apps. Want to see a specific project?";
+      return "I've tested web applications, desktop systems, and ticketing platforms. I focus on manual functional testing, cross-browser testing, and bug reporting. I also developed a Computer Vision AI system for my thesis and worked on AI chatbot integration. Want details on a specific project?";
     }
     if (msg.includes('skill') || msg.includes('stack') || msg.includes('tech')) {
-      return "My core stack: React, Astro, Tailwind, Node.js, Python, and Docker. I also work with ML/AI and computer vision.";
+      return "I specialize in Manual Testing, Test Case Creation, Bug Reporting, Functional Testing, Cross-Browser Testing (Chrome, Firefox, Edge, Safari), Mobile Responsiveness Testing, and UI/Visual Testing. I also have AI experience from my thesis (Computer Vision) and internship (chatbot integration).";
+    }
+    if (msg.includes('ai') || msg.includes('chatbot') || msg.includes('computer vision') || msg.includes('thesis')) {
+      return "I have two AI experiences: 1) Computer Vision AI Developer for my thesis - developed a dress code detection system, and 2) AI chatbot integration during my CEPALCO internship. These complement my primary Manual QA Testing focus.";
     }
     if (msg.includes('contact') || msg.includes('email')) {
       return "You can reach me at gaid.tristan123@gmail.com or @Tanex112 on Discord.";
     }
     if (msg.includes('hire') || msg.includes('available')) {
-      return "I'm open to freelance and collaboration. Tell me the role or project scope and I can share availability.";
+      return "I'm actively seeking entry-level Manual QA Tester positions. I'm available for full-time opportunities and ready to contribute to your QA team.";
     }
-    return "Tell me what you'd like to explore: projects, skills, or availability.";
+    return "Tell me what you'd like to explore: testing projects, QA skills, AI experience, or availability.";
   };
 
   const openChat = () => {
